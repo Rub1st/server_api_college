@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_closed: false
+  is_conducted: false
+  series_and_number: MyString
+  date_and_time: 2020-08-23 16:20:54
+  strings_count: 1
+  total_count: 1
+  summa_nds: 1.5
+  summa_with_nds: 1.5
+  note: MyString
+  invoice_type: one
+  operation: one
+  currency: one
+  contract: one
+
+two:
+  is_closed: false
+  is_conducted: false
+  series_and_number: MyString
+  date_and_time: 2020-08-23 16:20:54
+  strings_count: 1
+  total_count: 1
+  summa_nds: 1.5
+  summa_with_nds: 1.5
+  note: MyString
+  invoice_type: two
+  operation: two
+  currency: two
+  contract: two

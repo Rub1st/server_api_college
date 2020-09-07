@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  series_and_number: MyString
+  valid_from: 2020-08-23
+  valid_for: 2020-08-23
+  by_default: false
+  note: MyText
+  currency: one
+  type_of_exchange: one
+  type_of_payment: one
+  type_of_contract: one
+
+two:
+  series_and_number: MyString
+  valid_from: 2020-08-23
+  valid_for: 2020-08-23
+  by_default: false
+  note: MyText
+  currency: two
+  type_of_exchange: two
+  type_of_payment: two
+  type_of_contract: two

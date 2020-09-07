@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_closed: false
+  is_conducted: false
+  series_and_number: MyString
+  date_and_time: 2020-08-23 16:20:03
+  selling_on_commission: false
+  strings_count: 
+  total_count: 
+  summa: 
+  summa_nds: 
+  summa_with_nds: 
+  record_summa: 
+  retail_summa: 
+  pre_assessment_summa: 
+  write_down_summa: 
+  note: MyString
+  invoice_type: one
+  operation: one
+  currency: one
+  contract: one
+  agreement: one
+  status_of_price_tag_printing: one
+  status_of_acceptance: one
+  status_of_booting_in_equipment: one
+
+two:
+  is_closed: false
+  is_conducted: false
+  series_and_number: MyString
+  date_and_time: 2020-08-23 16:20:03
+  selling_on_commission: false
+  strings_count: 
+  total_count: 
+  summa: 
+  summa_nds: 
+  summa_with_nds: 
+  record_summa: 
+  retail_summa: 
+  pre_assessment_summa: 
+  write_down_summa: 
+  note: MyString
+  invoice_type: two
+  operation: two
+  currency: two
+  contract: two
+  agreement: two
+  status_of_price_tag_printing: two
+  status_of_acceptance: two
+  status_of_booting_in_equipment: two
