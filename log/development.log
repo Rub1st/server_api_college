@@ -26697,3 +26697,1418 @@ Processing by Customs::ActOfDiscrepanciesController#index as HTML
 Completed 200 OK in 168ms (Views: 2.4ms | ActiveRecord: 46.6ms | Allocations: 40843)
 
 
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 05:51:19 +0300
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 05:51:19 +0300
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 05:51:19 +0300
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 05:51:19 +0300
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 05:51:19 +0300
+  [1m[35m (31.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (41.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (42.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (46.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (45.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (76.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[35m (14.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (17.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Warehouses::ContractsController#index as HTML
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+Processing by Guides::CurrenciesController#index as HTML
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  [1m[36mTypeOfPayment Load (0.3ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 4007)
+
+
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mCurrency Load (20.7ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+  [1m[36mContract Load (24.6ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+Completed 200 OK in 40ms (Views: 0.7ms | ActiveRecord: 24.7ms | Allocations: 8720)
+
+
+  [1m[36mTypeOfExchange Load (69.1ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  [1m[36mCurrency Load (3.0ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mOwnershipForm Load (1.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+Completed 200 OK in 124ms (Views: 0.2ms | ActiveRecord: 107.4ms | Allocations: 38751)
+
+
+  [1m[36mOwnershipForm Load (7.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (1.7ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfExchange Load (3.1ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  [1m[36mWarehouse Load (0.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 197ms (Views: 20.4ms | ActiveRecord: 76.3ms | Allocations: 59709)
+
+
+  [1m[36mTypeOfPayment Load (1.2ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 175ms (Views: 1.7ms | ActiveRecord: 87.4ms | Allocations: 49411)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 05:51:19 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.7ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1161)
+
+
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 05:51:19 +0300
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (6.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (0.7ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 24ms (Views: 7.7ms | ActiveRecord: 8.1ms | Allocations: 4715)
+
+
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 12:34:40 +0300
+Started GET "/guides/ownership_forms" for 127.0.0.1 at 2020-09-07 12:34:40 +0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (58.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Guides::OrganizationsController#index as HTML
+Processing by Guides::OwnershipFormsController#index as HTML
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (1.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` ORDER BY `ownership_forms`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 56ms (Views: 0.6ms | ActiveRecord: 46.2ms | Allocations: 13062)
+
+
+  [1m[36mOwnershipForm Load (2.2ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (0.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (0.9ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 124ms (Views: 13.6ms | ActiveRecord: 42.8ms | Allocations: 22941)
+
+
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:10:28 +0300
+Started GET "/guides/ownership_forms" for 127.0.0.1 at 2020-09-07 13:10:28 +0300
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (4.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Guides::OrganizationsController#index as HTML
+Processing by Guides::OwnershipFormsController#index as HTML
+  [1m[36mOwnershipForm Load (3.0ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` ORDER BY `ownership_forms`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 8.5ms | Allocations: 3991)
+
+
+  [1m[36mOrganization Load (15.7ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (0.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (0.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (1.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 79ms (Views: 12.3ms | ActiveRecord: 28.4ms | Allocations: 21012)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:12:08 +0300
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:12:08 +0300
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:12:08 +0300
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:12:08 +0300
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:12:08 +0300
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOwnershipForm Load (25.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+Processing by Guides::CurrenciesController#index as HTML
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (0.6ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (0.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+Processing by Warehouses::ContractsController#index as HTML
+  [1m[36mOwnershipForm Load (0.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  [1m[36mCurrency Load (30.6ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+  [1m[36mWarehouse Load (33.1ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (3.7ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+Completed 200 OK in 61ms (Views: 0.3ms | ActiveRecord: 42.0ms | Allocations: 15555)
+
+
+  [1m[36mContract Load (18.5ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  [1m[36mWarehouse Load (9.1ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfPayment Load (17.7ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+Completed 200 OK in 104ms (Views: 26.7ms | ActiveRecord: 63.6ms | Allocations: 29877)
+
+
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 41ms (Views: 0.3ms | ActiveRecord: 22.8ms | Allocations: 11063)
+
+
+  [1m[36mWarehouse Load (5.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 116ms (Views: 43.3ms | ActiveRecord: 16.3ms | Allocations: 32569)
+
+
+  [1m[36mCurrency Load (4.0ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mTypeOfContract Load (1.9ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mTypeOfExchange Load (2.6ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mTypeOfPayment Load (0.5ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 123ms (Views: 1.9ms | ActiveRecord: 44.3ms | Allocations: 33898)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:12:09 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.5ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 898)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:12:09 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.6ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1161)
+
+
+Started GET "/Nujno%20produmat%20chto-to" for 127.0.0.1 at 2020-09-07 13:13:11 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/Nujno%20produmat%20chto-to"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/Nujno%20produmat%20chto-to" for 127.0.0.1 at 2020-09-07 13:13:11 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/Nujno%20produmat%20chto-to"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:13:49 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.3ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1158)
+
+
+Started GET "/guides/ownership_forms" for 127.0.0.1 at 2020-09-07 13:14:25 +0300
+Processing by Guides::OwnershipFormsController#index as HTML
+  [1m[36mOwnershipForm Load (0.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` ORDER BY `ownership_forms`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1066)
+
+
+Started POST "/guides/ownership_forms" for 127.0.0.1 at 2020-09-07 13:14:46 +0300
+Processing by Guides::OwnershipFormsController#create as HTML
+  Parameters: {"name"=>"Абсолютная", "ownership_form"=>{"name"=>"Абсолютная"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mOwnershipForm Create (1.7ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Абсолютная', '2020-09-07 10:14:46.647375', '2020-09-07 10:14:46.647375')[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mOwnershipForm Load (0.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 7 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:7:in `create'
+Completed 201 Created in 31ms (Views: 0.5ms | ActiveRecord: 10.0ms | Allocations: 3496)
+
+
+Started GET "/guides/ownership_forms" for 127.0.0.1 at 2020-09-07 13:14:48 +0300
+Processing by Guides::OwnershipFormsController#index as HTML
+  [1m[36mOwnershipForm Load (0.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` ORDER BY `ownership_forms`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1109)
+
+
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:14:58 +0300
+Started GET "/guides/ownership_forms" for 127.0.0.1 at 2020-09-07 13:14:58 +0300
+Processing by Guides::OwnershipFormsController#index as HTML
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOwnershipForm Load (1.8ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` ORDER BY `ownership_forms`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  [1m[36mOrganization Load (1.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 2461)
+
+
+  [1m[36mOwnershipForm Load (2.8ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (1.8ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (0.7ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 41ms (Views: 13.6ms | ActiveRecord: 7.2ms | Allocations: 5917)
+
+
+Started GET "/guides/products" for 127.0.0.1 at 2020-09-07 13:15:05 +0300
+Started GET "/guides/units" for 127.0.0.1 at 2020-09-07 13:15:05 +0300
+Processing by Guides::UnitsController#index as HTML
+  [1m[36mUnit Load (2.1ms)[0m  [1m[34mSELECT `units`.* FROM `units` ORDER BY `units`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/units_controller.rb:22:in `each'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 5.8ms | Allocations: 4911)
+
+
+Processing by Guides::ProductsController#index as HTML
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/products_controller.rb:22:in `each'
+  [1m[36mUnit Load (0.4ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/guides/products_controller.rb:52:in `get_method_helper'
+  [1m[36mCACHE Unit Load (0.0ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guides/products_controller.rb:52:in `get_method_helper'
+  [1m[36mUnit Load (0.5ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/guides/products_controller.rb:52:in `get_method_helper'
+Completed 200 OK in 32ms (Views: 1.4ms | ActiveRecord: 7.8ms | Allocations: 9811)
+
+
+Started GET "/guides/p_groups" for 127.0.0.1 at 2020-09-07 13:16:02 +0300
+Processing by Guides::PGroupsController#index as HTML
+  [1m[36mPGroup Load (3.3ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` ORDER BY `p_groups`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 7.4ms | Allocations: 3041)
+
+
+Started GET "/guides/p_subgroups" for 127.0.0.1 at 2020-09-07 13:16:06 +0300
+Started GET "/guides/p_groups" for 127.0.0.1 at 2020-09-07 13:16:06 +0300
+Processing by Guides::PSubgroupsController#index as HTML
+Processing by Guides::PGroupsController#index as HTML
+  [1m[36mPSubgroup Load (1.5ms)[0m  [1m[34mSELECT `p_subgroups`.* FROM `p_subgroups` ORDER BY `p_subgroups`.`id` ASC LIMIT 1000[0m
+  [1m[36mPGroup Load (0.3ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` ORDER BY `p_groups`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/p_subgroups_controller.rb:22:in `each'
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1479)
+
+
+  [1m[36mPGroup Load (0.5ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` WHERE `p_groups`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/guides/p_subgroups_controller.rb:44:in `get_method_helper'
+  [1m[36mCACHE PGroup Load (0.0ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` WHERE `p_groups`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guides/p_subgroups_controller.rb:44:in `get_method_helper'
+Completed 200 OK in 30ms (Views: 1.1ms | ActiveRecord: 7.1ms | Allocations: 6817)
+
+
+Started GET "/guides/units" for 127.0.0.1 at 2020-09-07 13:17:19 +0300
+Processing by Guides::UnitsController#index as HTML
+  [1m[36mUnit Load (0.4ms)[0m  [1m[34mSELECT `units`.* FROM `units` ORDER BY `units`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/units_controller.rb:22:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1035)
+
+
+Started POST "/guides/units" for 127.0.0.1 at 2020-09-07 13:17:44 +0300
+Processing by Guides::UnitsController#create as HTML
+  Parameters: {"unit"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 127)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: unit):
+  
+app/controllers/guides/units_controller.rb:42:in `permit_params'
+app/controllers/guides/units_controller.rb:10:in `create'
+Started POST "/guides/units" for 127.0.0.1 at 2020-09-07 13:17:54 +0300
+Processing by Guides::UnitsController#create as HTML
+  Parameters: {"short_name"=>"уп.", "full_name"=>"упаковки", "unit"=>{"short_name"=>"уп.", "full_name"=>"упаковки"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mUnit Create (0.5ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('уп.', 'упаковки', '2020-09-07 10:17:54.987802', '2020-09-07 10:17:54.987802')[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mUnit Load (0.5ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`id` = 5 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:7:in `create'
+Completed 201 Created in 29ms (Views: 2.2ms | ActiveRecord: 9.4ms | Allocations: 3338)
+
+
+Started GET "/guides/units" for 127.0.0.1 at 2020-09-07 13:17:55 +0300
+Processing by Guides::UnitsController#index as HTML
+  [1m[36mUnit Load (0.5ms)[0m  [1m[34mSELECT `units`.* FROM `units` ORDER BY `units`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/units_controller.rb:22:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1092)
+
+
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:19:46 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mCurrency Load (0.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1037)
+
+
+Started GET "/guides/products" for 127.0.0.1 at 2020-09-07 13:20:32 +0300
+Started GET "/guides/units" for 127.0.0.1 at 2020-09-07 13:20:32 +0300
+Processing by Guides::UnitsController#index as HTML
+Processing by Guides::ProductsController#index as HTML
+  [1m[36mUnit Load (3.1ms)[0m  [1m[34mSELECT `units`.* FROM `units` ORDER BY `units`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/units_controller.rb:22:in `each'
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` ORDER BY `products`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/products_controller.rb:22:in `each'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 2990)
+
+
+  [1m[36mUnit Load (0.7ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/guides/products_controller.rb:52:in `get_method_helper'
+  [1m[36mCACHE Unit Load (0.0ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guides/products_controller.rb:52:in `get_method_helper'
+  [1m[36mUnit Load (0.3ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/guides/products_controller.rb:52:in `get_method_helper'
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 2.3ms | Allocations: 4714)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:42:20 +0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:42:20 +0300
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:42:20 +0300
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:42:20 +0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:42:20 +0300
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[35m (7.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mTypeOfPayment Load (8.2ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 8.2ms | Allocations: 2023)
+
+
+Processing by Guides::CurrenciesController#index as HTML
+Processing by Warehouses::ContractsController#index as HTML
+  [1m[36mOrganization Load (11.8ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mCurrency Load (4.7ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  [1m[36mOrganization Load (21.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 4.7ms | Allocations: 2839)
+
+
+  [1m[36mContract Load (9.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (6.8ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (3.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (0.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mCurrency Load (5.1ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  [1m[36mOwnershipForm Load (3.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  [1m[36mWarehouse Load (1.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mTypeOfContract Load (0.6ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mWarehouse Load (4.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfExchange Load (1.5ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 9.4ms | ActiveRecord: 24.5ms | Allocations: 13790)
+
+
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mWarehouse Load (2.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfPayment Load (2.7ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (1.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mOrganization Load (1.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+Completed 200 OK in 69ms (Views: 12.8ms | ActiveRecord: 31.9ms | Allocations: 20662)
+
+
+  [1m[36mOrganization Load (8.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 63ms (Views: 3.2ms | ActiveRecord: 29.3ms | Allocations: 16806)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:42:21 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 848)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:42:21 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1110)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:44:49 +0300
+Processing by Warehouses::ContractsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:44:49 +0300
+  [1m[36mContract Load (1.2ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (0.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:44:49 +0300
+  [1m[36mOwnershipForm Load (1.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:44:49 +0300
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:44:49 +0300
+Processing by Guides::OrganizationsController#index as HTML
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (0.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 24ms (Views: 4.6ms | ActiveRecord: 3.7ms | Allocations: 9479)
+
+
+  [1m[36mCurrency Load (5.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mOrganization Load (10.9ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  [1m[36mCurrency Load (3.6ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.6ms | Allocations: 2023)
+
+
+  [1m[36mTypeOfPayment Load (0.6ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2008)
+
+
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mOwnershipForm Load (5.1ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (1.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mTypeOfContract Load (1.9ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mWarehouse Load (2.8ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfExchange Load (0.8ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mWarehouse Load (2.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfPayment Load (1.8ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 49ms (Views: 9.0ms | ActiveRecord: 23.0ms | Allocations: 11971)
+
+
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (1.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 77ms (Views: 1.3ms | ActiveRecord: 12.8ms | Allocations: 24165)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:44:49 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 847)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:44:49 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.5ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1110)
+
+
+Started POST "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:45:05 +0300
+Processing by Warehouses::ContractsController#create as HTML
+  Parameters: {"series_and_number"=>"123456789", "valid_for"=>"2020/10/10", "valid_from"=>"2019/10/10", "currency_id"=>2, "type_of_payment_id"=>1, "type_of_exchange_id"=>1, "type_of_contract_id"=>1, "provider_id"=>1, "customer_id"=>2, "note"=>"Могут быть изменены", "by_default"=>"екгу", "contract"=>{"series_and_number"=>"123456789", "valid_from"=>"2019/10/10", "valid_for"=>"2020/10/10", "by_default"=>"екгу", "note"=>"Могут быть изменены", "currency_id"=>2, "type_of_exchange_id"=>1, "type_of_payment_id"=>1, "type_of_contract_id"=>1, "provider_id"=>1, "customer_id"=>2}}
+  [1m[36mCurrency Load (0.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:33:in `post_method_helper'
+  [1m[36mTypeOfExchange Load (0.3ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:34:in `post_method_helper'
+  [1m[36mTypeOfContract Load (0.3ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:35:in `post_method_helper'
+  [1m[36mTypeOfPayment Load (0.4ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:36:in `post_method_helper'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_provider` = TRUE AND `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:37:in `post_method_helper'
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_buyer` = TRUE AND `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:38:in `post_method_helper'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mContract Create (0.7ms)[0m  [1m[32mINSERT INTO `contracts` (`series_and_number`, `valid_from`, `valid_for`, `by_default`, `note`, `currency_id`, `type_of_exchange_id`, `type_of_payment_id`, `type_of_contract_id`, `provider_id`, `customer_id`, `created_at`, `updated_at`) VALUES ('123456789', '2019-10-10', '2020-10-10', TRUE, 'Могут быть изменены', 2, 1, 1, 1, 1, 2, '2020-09-07 10:45:05.624258', '2020-09-07 10:45:05.624258')[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mContract Load (0.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` WHERE `contracts`.`id` = 2 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:7:in `create'
+Completed 201 Created in 36ms (Views: 0.6ms | ActiveRecord: 10.7ms | Allocations: 8613)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:45:07 +0300
+Processing by Warehouses::ContractsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:45:07 +0300
+  [1m[36mContract Load (1.5ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOrganization Load (2.1ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  [1m[36mCurrency Load (7.2ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:45:07 +0300
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:45:07 +0300
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:45:07 +0300
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mTypeOfContract Load (13.5ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfContract Load (0.6ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  [1m[36mOwnershipForm Load (3.7ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1793)
+
+
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mTypeOfExchange Load (2.3ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mTypeOfExchange Load (5.1ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 3046)
+
+
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mOrganization Load (4.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (1.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mOwnershipForm Load (6.7ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mTypeOfPayment Load (5.8ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  [1m[36mWarehouse Load (2.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mOwnershipForm Load (6.7ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+Completed 200 OK in 74ms (Views: 15.8ms | ActiveRecord: 10.3ms | Allocations: 17229)
+
+
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (1.9ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+  [1m[36mWarehouse Load (1.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 43ms (Views: 7.1ms | ActiveRecord: 19.5ms | Allocations: 11873)
+
+
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCACHE TypeOfContract Load (0.0ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mCACHE TypeOfExchange Load (0.0ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mCACHE TypeOfPayment Load (0.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 121ms (Views: 5.5ms | ActiveRecord: 33.4ms | Allocations: 29371)
+
+
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:45:07 +0300
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  [1m[36mTypeOfPayment Load (0.4ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 848)
+
+
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:45:07 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mCurrency Load (0.5ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1036)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:46:17 +0300
+Processing by Warehouses::ContractsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:46:17 +0300
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:46:17 +0300
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:46:17 +0300
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:46:17 +0300
+Processing by Guides::OrganizationsController#index as HTML
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  [1m[36mOrganization Load (5.6ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mTypeOfPayment Load (3.7ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  [1m[36mContract Load (15.6ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+  [1m[36mOrganization Load (2.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  [1m[36mOwnershipForm Load (7.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mCurrency Load (3.6ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCurrency Load (10.2ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 10.2ms | Allocations: 4920)
+
+
+  [1m[36mOwnershipForm Load (8.6ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (2.2ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  [1m[36mTypeOfContract Load (8.2ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (2.0ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 3.7ms | Allocations: 5443)
+
+
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mWarehouse Load (2.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (2.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (3.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 49ms (Views: 8.0ms | ActiveRecord: 18.7ms | Allocations: 13958)
+
+
+  [1m[36mWarehouse Load (2.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 65ms (Views: 11.3ms | ActiveRecord: 20.0ms | Allocations: 18989)
+
+
+  [1m[36mTypeOfExchange Load (10.2ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mTypeOfPayment Load (1.1ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCACHE TypeOfContract Load (0.0ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mCACHE TypeOfExchange Load (0.0ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mCACHE TypeOfPayment Load (0.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 99ms (Views: 3.0ms | ActiveRecord: 41.2ms | Allocations: 29279)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:46:18 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.5ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 847)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:46:18 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1110)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Warehouses::ContractsController#index as HTML
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+  [1m[36mOrganization Load (2.9ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mContract Load (9.8ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  [1m[36mOrganization Load (3.9ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+  [1m[36mCurrency Load (0.9ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  [1m[36mOwnershipForm Load (5.2ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (3.8ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 5645)
+
+
+  [1m[36mTypeOfPayment Load (2.7ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 1494)
+
+
+  [1m[36mCurrency Load (7.2ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mTypeOfContract Load (0.6ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mOwnershipForm Load (2.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  [1m[36mOwnershipForm Load (14.2ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (0.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  [1m[36mWarehouse Load (8.9ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfExchange Load (15.0ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (1.8ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 54ms (Views: 13.1ms | ActiveRecord: 21.3ms | Allocations: 15363)
+
+
+  [1m[36mWarehouse Load (3.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 68ms (Views: 21.7ms | ActiveRecord: 26.5ms | Allocations: 19702)
+
+
+  [1m[36mTypeOfPayment Load (8.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+  [1m[36mCurrency Load (0.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCACHE TypeOfContract Load (0.0ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mCACHE TypeOfExchange Load (0.0ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mCACHE TypeOfPayment Load (0.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 98ms (Views: 2.5ms | ActiveRecord: 42.7ms | Allocations: 27765)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Warehouses::ContractsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mContract Load (9.5ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+  [1m[36mOrganization Load (6.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOwnershipForm Load (0.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  [1m[36mCurrency Load (4.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 4.3ms | Allocations: 5862)
+
+
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (2.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  [1m[36mTypeOfPayment Load (3.7ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  [1m[36mCurrency Load (7.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  [1m[36mOwnershipForm Load (1.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 2199)
+
+
+  [1m[36mTypeOfContract Load (2.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mWarehouse Load (2.0ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mOwnershipForm Load (3.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (1.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 61ms (Views: 14.2ms | ActiveRecord: 13.0ms | Allocations: 16222)
+
+
+  [1m[36mTypeOfExchange Load (4.2ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mWarehouse Load (7.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfPayment Load (0.8ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (1.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+Completed 200 OK in 52ms (Views: 7.5ms | ActiveRecord: 14.2ms | Allocations: 14384)
+
+
+  [1m[36mOrganization Load (2.6ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+  [1m[36mCurrency Load (0.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCACHE TypeOfContract Load (0.0ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mCACHE TypeOfExchange Load (0.0ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mCACHE TypeOfPayment Load (0.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 101ms (Views: 6.4ms | ActiveRecord: 28.7ms | Allocations: 29243)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.5ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 847)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.6ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1110)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 847)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:48:10 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (1.1ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1110)
+
+
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:48:33 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1036)
+
+
+Started DELETE "/guides/currencies/2" for 127.0.0.1 at 2020-09-07 13:48:39 +0300
+Processing by Guides::CurrenciesController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 2 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:24:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/query_objects/single_table_query.rb:25:in `destroy'
+  [1m[36mInvoice Destroy (1.6ms)[0m  [1m[31mDELETE FROM `invoices` WHERE `invoices`.`currency_id` = 2[0m
+  ↳ app/services/query_objects/single_table_query.rb:25:in `destroy'
+  [1m[36mActOfDiscrepancy Destroy (1.5ms)[0m  [1m[31mDELETE FROM `act_of_discrepancies` WHERE `act_of_discrepancies`.`currency_id` = 2[0m
+  ↳ app/services/query_objects/single_table_query.rb:25:in `destroy'
+  [1m[36mContract Destroy (0.9ms)[0m  [1m[31mDELETE FROM `contracts` WHERE `contracts`.`currency_id` = 2[0m
+  ↳ app/services/query_objects/single_table_query.rb:25:in `destroy'
+  [1m[36mCurrency Destroy (0.6ms)[0m  [1m[31mDELETE FROM `currencies` WHERE `currencies`.`id` = 2[0m
+  ↳ app/services/query_objects/single_table_query.rb:25:in `destroy'
+  [1m[35m (18.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/query_objects/single_table_query.rb:25:in `destroy'
+Completed 200 OK in 116ms (Views: 0.3ms | ActiveRecord: 30.7ms | Allocations: 13632)
+
+
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:48:40 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 977)
+
+
+Started POST "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:49:03 +0300
+Processing by Guides::CurrenciesController#create as HTML
+  Parameters: {"short_name"=>"Br", "full_name"=>"белорусский рубль", "currency"=>{"short_name"=>"Br", "full_name"=>"белорусский рубль"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mCurrency Create (1.1ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('Br', 'белорусский рубль', '2020-09-07 10:49:03.964572', '2020-09-07 10:49:03.964572')[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mCurrency Load (0.5ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 6 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:7:in `create'
+Completed 201 Created in 22ms (Views: 0.4ms | ActiveRecord: 10.5ms | Allocations: 3276)
+
+
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:49:04 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mCurrency Load (0.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1036)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:50:34 +0300
+Processing by Warehouses::ContractsController#index as HTML
+  [1m[36mContract Load (0.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:50:35 +0300
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:50:35 +0300
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:50:35 +0300
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:50:35 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mCurrency Load (10.0ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  [1m[36mOrganization Load (2.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mCurrency Load (3.7ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.7ms | Allocations: 4055)
+
+
+  [1m[36mTypeOfContract Load (0.8ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  [1m[36mOrganization Load (2.6ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mTypeOfPayment Load (1.3ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 4693)
+
+
+  [1m[36mOwnershipForm Load (4.6ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (2.6ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (2.8ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (1.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mTypeOfExchange Load (5.8ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mWarehouse Load (2.7ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (6.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfPayment Load (1.7ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (5.1ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 53ms (Views: 5.6ms | ActiveRecord: 14.7ms | Allocations: 17225)
+
+
+  [1m[36mWarehouse Load (2.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 41ms (Views: 10.4ms | ActiveRecord: 18.7ms | Allocations: 13253)
+
+
+  [1m[36mOrganization Load (4.8ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 73ms (Views: 1.8ms | ActiveRecord: 23.8ms | Allocations: 24485)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:50:35 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 847)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:50:35 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1110)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:51:33 +0300
+Processing by Warehouses::ContractsController#index as HTML
+  [1m[36mContract Load (0.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:51:33 +0300
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOrganization Load (1.9ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (0.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mCurrency Load (14.6ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:51:33 +0300
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:51:33 +0300
+  [1m[36mOwnershipForm Load (1.2ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:51:33 +0300
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mTypeOfPayment Load (0.7ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 997)
+
+
+  [1m[36mWarehouse Load (2.7ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mCurrency Load (8.8ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 8.8ms | Allocations: 3257)
+
+
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (0.5ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mTypeOfContract Load (12.6ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mOwnershipForm Load (6.1ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (0.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (1.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 61ms (Views: 41.4ms | ActiveRecord: 6.9ms | Allocations: 16526)
+
+
+  [1m[36mWarehouse Load (3.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfExchange Load (1.8ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 44ms (Views: 6.5ms | ActiveRecord: 11.8ms | Allocations: 12947)
+
+
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mTypeOfPayment Load (0.5ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 92ms (Views: 1.9ms | ActiveRecord: 30.9ms | Allocations: 24489)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:51:33 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 847)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:51:33 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1110)
+
+
+Started POST "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:51:42 +0300
+Processing by Warehouses::ContractsController#create as HTML
+  Parameters: {"currency_id"=>6, "type_of_payment_id"=>1, "type_of_exchange_id"=>1, "type_of_contract_id"=>1, "provider_id"=>1, "customer_id"=>2, "contract"=>{"currency_id"=>6, "type_of_exchange_id"=>1, "type_of_payment_id"=>1, "type_of_contract_id"=>1, "provider_id"=>1, "customer_id"=>2}}
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:33:in `post_method_helper'
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:34:in `post_method_helper'
+  [1m[36mTypeOfContract Load (0.5ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:35:in `post_method_helper'
+  [1m[36mTypeOfPayment Load (0.5ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:36:in `post_method_helper'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_provider` = TRUE AND `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:37:in `post_method_helper'
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_buyer` = TRUE AND `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:38:in `post_method_helper'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mContract Create (0.6ms)[0m  [1m[32mINSERT INTO `contracts` (`currency_id`, `type_of_exchange_id`, `type_of_payment_id`, `type_of_contract_id`, `provider_id`, `customer_id`, `created_at`, `updated_at`) VALUES (6, 1, 1, 1, 1, 2, '2020-09-07 10:51:42.901434', '2020-09-07 10:51:42.901434')[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mContract Load (0.6ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` WHERE `contracts`.`id` = 3 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:7:in `create'
+Completed 201 Created in 33ms (Views: 0.7ms | ActiveRecord: 11.2ms | Allocations: 7527)
+
+
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:51:44 +0300
+Processing by Warehouses::ContractsController#index as HTML
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:51:44 +0300
+Started GET "/guides/organizations" for 127.0.0.1 at 2020-09-07 13:51:44 +0300
+Processing by Guides::OrganizationsController#index as HTML
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:51:44 +0300
+Processing by Guides::OrganizationsController#index as HTML
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (0.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mContract Load (16.1ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  [1m[36mOrganization Load (9.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+Started GET "/warehouses/type_of_payments" for 127.0.0.1 at 2020-09-07 13:51:44 +0300
+Processing by Guides::CurrenciesController#index as HTML
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (1.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+Processing by Warehouses::TypeOfPaymentsController#index as HTML
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mCurrency Load (3.2ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  [1m[36mOwnershipForm Load (2.2ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  [1m[36mTypeOfPayment Load (3.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` ORDER BY `type_of_payments`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 4298)
+
+
+  [1m[36mOwnershipForm Load (2.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (6.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 5589)
+
+
+  [1m[36mWarehouse Load (3.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  [1m[36mTypeOfContract Load (6.9ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mWarehouse Load (1.7ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 48ms (Views: 15.5ms | ActiveRecord: 11.1ms | Allocations: 15095)
+
+
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mTypeOfExchange Load (0.8ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mWarehouse Load (1.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 62ms (Views: 16.1ms | ActiveRecord: 18.5ms | Allocations: 19370)
+
+
+  [1m[36mTypeOfPayment Load (5.8ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCACHE TypeOfContract Load (0.0ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mCACHE TypeOfExchange Load (0.0ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mCACHE TypeOfPayment Load (0.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+Completed 200 OK in 94ms (Views: 3.2ms | ActiveRecord: 31.5ms | Allocations: 29255)
+
+
+Started GET "/warehouses/type_of_exchanges" for 127.0.0.1 at 2020-09-07 13:51:44 +0300
+Processing by Warehouses::TypeOfExchangesController#index as HTML
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` ORDER BY `type_of_exchanges`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 847)
+
+
+Started GET "/warehouses/type_of_contracts" for 127.0.0.1 at 2020-09-07 13:51:44 +0300
+Processing by Warehouses::TypeOfContractsController#index as HTML
+  [1m[36mTypeOfContract Load (0.3ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` ORDER BY `type_of_contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1110)
+
+
+Started GET "/customs/agreements" for 127.0.0.1 at 2020-09-07 13:51:59 +0300
+Processing by Customs::AgreementsController#index as HTML
+  [1m[36mAgreement Load (2.7ms)[0m  [1m[34mSELECT `agreements`.* FROM `agreements` ORDER BY `agreements`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 3059)
+
+
+Started GET "/customs/operations" for 127.0.0.1 at 2020-09-07 13:52:02 +0300
+Processing by Customs::OperationsController#index as HTML
+  [1m[36mOperation Load (2.9ms)[0m  [1m[34mSELECT `operations`.* FROM `operations` ORDER BY `operations`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 6.1ms | Allocations: 2987)
+
+
+Started GET "/customs/status_of_booting_in_equipments" for 127.0.0.1 at 2020-09-07 13:52:04 +0300
+Processing by Customs::StatusOfBootingInEquipmentsController#index as HTML
+  [1m[36mStatusOfBootingInEquipment Load (2.3ms)[0m  [1m[34mSELECT `status_of_booting_in_equipments`.* FROM `status_of_booting_in_equipments` ORDER BY `status_of_booting_in_equipments`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 3002)
+
+
+Started GET "/customs/act_of_discrepancies" for 127.0.0.1 at 2020-09-07 13:52:10 +0300
+Started GET "/warehouses/contracts" for 127.0.0.1 at 2020-09-07 13:52:10 +0300
+Processing by Warehouses::ContractsController#index as HTML
+Processing by Customs::ActOfDiscrepanciesController#index as HTML
+Started GET "/customs/operations" for 127.0.0.1 at 2020-09-07 13:52:10 +0300
+Started GET "/warehouses/warehouses" for 127.0.0.1 at 2020-09-07 13:52:10 +0300
+Started GET "/guides/currencies" for 127.0.0.1 at 2020-09-07 13:52:10 +0300
+  [1m[36mActOfDiscrepancy Load (4.7ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies` ORDER BY `act_of_discrepancies`.`id` ASC LIMIT 1000[0m
+Processing by Customs::OperationsController#index as HTML
+  [1m[36mContract Load (7.9ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` ORDER BY `contracts`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:22:in `each'
+  ↳ app/controllers/warehouses/contracts_controller.rb:22:in `each'
+Processing by Warehouses::WarehousesController#index as HTML
+Processing by Guides::CurrenciesController#index as HTML
+  [1m[36mOperation Load (1.2ms)[0m  [1m[34mSELECT `operations`.* FROM `operations` ORDER BY `operations`.`id` ASC LIMIT 1000[0m
+  ↳ app/services/query_objects/single_table_query.rb:29:in `each'
+  [1m[36mCurrency Load (27.5ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCurrency Load (3.0ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` ORDER BY `currencies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/currencies_controller.rb:22:in `each'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 3826)
+
+
+  [1m[36mWarehouse Load (26.8ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` ORDER BY `warehouses`.`id` ASC LIMIT 1000[0m
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 12948)
+
+
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `each'
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `block in index'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `block in index'
+Completed 200 OK in 55ms (Views: 0.9ms | ActiveRecord: 28.1ms | Allocations: 16815)
+
+
+  [1m[36mTypeOfContract Load (15.0ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mTypeOfExchange Load (0.5ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m
+  [1m[36mInvoiceType Load (6.9ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types` WHERE `invoice_types`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:63:in `get_method_helper'
+  [1m[36mTypeOfPayment Load (14.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mOperation Load (3.3ms)[0m  [1m[34mSELECT `operations`.* FROM `operations` WHERE `operations`.`id` = 1 LIMIT 1[0m
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:64:in `get_method_helper'
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mCurrency Load (1.1ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 1 LIMIT 1[0m
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:65:in `get_method_helper'
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/warehouses/contracts_controller.rb:55:in `get_method_helper'
+  [1m[36mCACHE TypeOfContract Load (0.0ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:56:in `get_method_helper'
+  [1m[36mCACHE TypeOfExchange Load (0.0ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:57:in `get_method_helper'
+  [1m[36mCACHE TypeOfPayment Load (0.0ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:58:in `get_method_helper'
+  [1m[36mCACHE Organization Load (0.0ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:59:in `get_method_helper'
+  [1m[36mContract Load (3.0ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` WHERE `contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:66:in `get_method_helper'
+  [1m[36mCACHE Organization Load (4.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/warehouses/contracts_controller.rb:60:in `get_method_helper'
+  [1m[36mWarehouse Load (2.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`id` = 2 LIMIT 1[0m
+Completed 200 OK in 152ms (Views: 9.1ms | ActiveRecord: 71.1ms | Allocations: 39429)
+
+
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:67:in `get_method_helper'
+  [1m[36mWarehouse Load (3.2ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:68:in `get_method_helper'
+Completed 200 OK in 166ms (Views: 1.8ms | ActiveRecord: 33.2ms | Allocations: 41628)
+
+
+Started GET "/warehouses/warehouses" for 127.0.0.1 at 2020-09-07 13:52:10 +0300
+Processing by Warehouses::WarehousesController#index as HTML
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` ORDER BY `warehouses`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `each'
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `block in index'
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `block in index'
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 1.6ms | Allocations: 2714)
+
+
