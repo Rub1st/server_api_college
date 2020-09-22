@@ -3,7 +3,9 @@
 one:
   short_name: MyString
   full_name: MyString
+  gramms: 1.5
 
 two:
   short_name: MyString
   full_name: MyString
+  gramms: 1.5

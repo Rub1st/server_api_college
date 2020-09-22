@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_213959) do
+ActiveRecord::Schema.define(version: 2020_09_18_214608) do
 
   create_table "act_of_discrepancies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.boolean "is_closed"
@@ -25,17 +25,26 @@ ActiveRecord::Schema.define(version: 2020_08_26_213959) do
     t.bigint "invoice_type_id", null: false
     t.bigint "operation_id", null: false
     t.bigint "currency_id", null: false
-    t.bigint "contract_id", null: false
+    t.bigint "invoice_id", null: false
     t.bigint "provider_warehouse_id"
     t.bigint "customer_warehouse_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["contract_id"], name: "index_act_of_discrepancies_on_contract_id"
     t.index ["currency_id"], name: "index_act_of_discrepancies_on_currency_id"
     t.index ["customer_warehouse_id"], name: "index_act_of_discrepancies_on_customer_warehouse_id"
+    t.index ["invoice_id"], name: "index_act_of_discrepancies_on_invoice_id"
     t.index ["invoice_type_id"], name: "index_act_of_discrepancies_on_invoice_type_id"
     t.index ["operation_id"], name: "index_act_of_discrepancies_on_operation_id"
     t.index ["provider_warehouse_id"], name: "index_act_of_discrepancies_on_provider_warehouse_id"
+  end
+
+  create_table "act_of_discrepancies_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "invoice_product_id", null: false
+    t.bigint "act_of_discrepancy_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["act_of_discrepancy_id"], name: "index_act_of_discrepancies_products_on_act_of_discrepancy_id"
+    t.index ["invoice_product_id"], name: "index_act_of_discrepancies_products_on_invoice_product_id"
   end
 
   create_table "agreements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -48,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_08_26_213959) do
     t.string "series_and_number"
     t.date "valid_from"
     t.date "valid_for"
-    t.boolean "by_default"
     t.text "note"
     t.bigint "currency_id", null: false
     t.bigint "type_of_exchange_id", null: false
@@ -66,17 +74,30 @@ ActiveRecord::Schema.define(version: 2020_08_26_213959) do
     t.index ["type_of_payment_id"], name: "index_contracts_on_type_of_payment_id"
   end
 
-  create_table "contracts_products", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "contract_id", null: false
-    t.bigint "product_id", null: false
-    t.index ["contract_id", "product_id"], name: "index_contracts_products_on_contract_id_and_product_id"
-  end
-
   create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "short_name"
     t.string "full_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "invoice_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "full_name"
+    t.string "short_name"
+    t.string "code"
+    t.float "price"
+    t.bigint "rate_nds_id", null: false
+    t.float "summa_nds"
+    t.float "cost"
+    t.bigint "unit_id", null: false
+    t.bigint "p_subgroup_id", null: false
+    t.bigint "invoice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_id"], name: "index_invoice_products_on_invoice_id"
+    t.index ["p_subgroup_id"], name: "index_invoice_products_on_p_subgroup_id"
+    t.index ["rate_nds_id"], name: "index_invoice_products_on_rate_nds_id"
+    t.index ["unit_id"], name: "index_invoice_products_on_unit_id"
   end
 
   create_table "invoice_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -165,24 +186,10 @@ ActiveRecord::Schema.define(version: 2020_08_26_213959) do
     t.index ["p_group_id"], name: "index_p_subgroups_on_p_group_id"
   end
 
-  create_table "p_subgroups_products", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "p_subgroup_id", null: false
-    t.bigint "product_id", null: false
-    t.index ["p_subgroup_id", "product_id"], name: "index_p_subgroups_products_on_p_subgroup_id_and_product_id"
-  end
-
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "full_name"
-    t.string "short_name"
-    t.string "code"
-    t.float "price"
-    t.float "rate_nds"
-    t.float "summa_nds"
-    t.float "cost"
-    t.bigint "unit_id", null: false
+  create_table "rate_nds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["unit_id"], name: "index_products_on_unit_id"
   end
 
   create_table "status_of_acceptances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -224,6 +231,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_213959) do
   create_table "units", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "short_name"
     t.string "full_name"
+    t.float "gramms"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -236,18 +244,24 @@ ActiveRecord::Schema.define(version: 2020_08_26_213959) do
     t.index ["organization_id"], name: "index_warehouses_on_organization_id"
   end
 
-  add_foreign_key "act_of_discrepancies", "contracts"
   add_foreign_key "act_of_discrepancies", "currencies"
   add_foreign_key "act_of_discrepancies", "invoice_types"
+  add_foreign_key "act_of_discrepancies", "invoices"
   add_foreign_key "act_of_discrepancies", "operations"
   add_foreign_key "act_of_discrepancies", "warehouses", column: "customer_warehouse_id"
   add_foreign_key "act_of_discrepancies", "warehouses", column: "provider_warehouse_id"
+  add_foreign_key "act_of_discrepancies_products", "act_of_discrepancies"
+  add_foreign_key "act_of_discrepancies_products", "invoice_products"
   add_foreign_key "contracts", "currencies"
   add_foreign_key "contracts", "organizations", column: "customer_id"
   add_foreign_key "contracts", "organizations", column: "provider_id"
   add_foreign_key "contracts", "type_of_contracts"
   add_foreign_key "contracts", "type_of_exchanges"
   add_foreign_key "contracts", "type_of_payments"
+  add_foreign_key "invoice_products", "invoices"
+  add_foreign_key "invoice_products", "p_subgroups"
+  add_foreign_key "invoice_products", "rate_nds", column: "rate_nds_id"
+  add_foreign_key "invoice_products", "units"
   add_foreign_key "invoices", "agreements"
   add_foreign_key "invoices", "contracts"
   add_foreign_key "invoices", "currencies"
@@ -258,6 +272,5 @@ ActiveRecord::Schema.define(version: 2020_08_26_213959) do
   add_foreign_key "invoices", "status_of_price_tag_printings"
   add_foreign_key "organizations", "ownership_forms"
   add_foreign_key "p_subgroups", "p_groups"
-  add_foreign_key "products", "units"
   add_foreign_key "warehouses", "organizations"
 end

@@ -4,12 +4,12 @@ one:
   is_closed: false
   is_conducted: false
   series_and_number: MyString
-  date_and_time: 2020-08-23 16:20:03
+  date_and_time: 2020-09-19 00:42:26
   selling_on_commission: false
   strings_count: 
   total_count: 
-  summa: 
-  summa_nds: 
+  summa: 1.5
+  summa_nds: 1.5
   summa_with_nds: 
   record_summa: 
   retail_summa: 
@@ -29,12 +29,12 @@ two:
   is_closed: false
   is_conducted: false
   series_and_number: MyString
-  date_and_time: 2020-08-23 16:20:03
+  date_and_time: 2020-09-19 00:42:26
   selling_on_commission: false
   strings_count: 
   total_count: 
-  summa: 
-  summa_nds: 
+  summa: 1.5
+  summa_nds: 1.5
   summa_with_nds: 
   record_summa: 
   retail_summa: 

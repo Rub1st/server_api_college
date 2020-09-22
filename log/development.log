@@ -28112,3 +28112,1047 @@ Processing by Warehouses::WarehousesController#index as HTML
 Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 1.6ms | Allocations: 2714)
 
 
+Started GET "/" for 127.0.0.1 at 2020-09-19 00:15:53 +0300
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (22.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 36.8ms | Allocations: 407)
+Completed 200 OK in 55ms (Views: 49.4ms | ActiveRecord: 0.0ms | Allocations: 2241)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2020-09-19 00:15:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-19 00:16:20 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.0ms | Allocations: 179)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 730)
+
+
+Started POST "/customs/act_of_discrepancies" for ::1 at 2020-09-19 00:16:57 +0300
+Processing by Customs::ActOfDiscrepanciesController#create as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "act_of_discrepancy"=>{"invoice_type_id"=>2, "operation_id"=>1, "currency_id"=>1, "contract_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2}}
+  [1m[36mInvoiceType Load (12.2ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types` WHERE `invoice_types`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:33:in `post_method_helper'
+  [1m[36mOperation Load (4.2ms)[0m  [1m[34mSELECT `operations`.* FROM `operations` WHERE `operations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:34:in `post_method_helper'
+  [1m[36mCurrency Load (9.0ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:35:in `post_method_helper'
+  [1m[36mContract Load (2.7ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts` WHERE `contracts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:36:in `post_method_helper'
+  [1m[36mWarehouse Load (11.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:37:in `post_method_helper'
+  [1m[36mWarehouse Load (2.1ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:38:in `post_method_helper'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mActOfDiscrepancy Create (17.7ms)[0m  [1m[32mINSERT INTO `act_of_discrepancies` (`invoice_type_id`, `operation_id`, `currency_id`, `contract_id`, `provider_warehouse_id`, `customer_warehouse_id`, `created_at`, `updated_at`) VALUES (2, 1, 1, 1, 1, 2, '2020-09-18 21:16:58.287835', '2020-09-18 21:16:58.287835')[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/query_objects/single_table_query.rb:6:in `create'
+  [1m[36mActOfDiscrepancy Load (0.4ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies` WHERE `act_of_discrepancies`.`id` = 4 LIMIT 1[0m
+  ↳ app/services/query_objects/single_table_query.rb:7:in `create'
+Completed 201 Created in 279ms (Views: 0.7ms | ActiveRecord: 119.2ms | Allocations: 45676)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (668.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS `our_server_api_development`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (78.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `our_server_api_test`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE DATABASE `our_server_api_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE DATABASE `our_server_api_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (47.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (54.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK('2100883994326461855', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateInvoiceTypes (20200918214110)
+  [1m[35m (45.4ms)[0m  [1m[35mCREATE TABLE `invoice_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214110')[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOperations (20200918214111)
+  [1m[35m (42.8ms)[0m  [1m[35mCREATE TABLE `operations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214111')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAgreements (20200918214112)
+  [1m[35m (87.6ms)[0m  [1m[35mCREATE TABLE `agreements` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214112')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStatusOfPriceTagPrintings (20200918214113)
+  [1m[35m (45.2ms)[0m  [1m[35mCREATE TABLE `status_of_price_tag_printings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214113')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStatusOfAcceptances (20200918214114)
+  [1m[35m (51.1ms)[0m  [1m[35mCREATE TABLE `status_of_acceptances` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214114')[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStatusOfBootingInEquipments (20200918214115)
+  [1m[35m (46.2ms)[0m  [1m[35mCREATE TABLE `status_of_booting_in_equipments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214115')[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUnits (20200918214116)
+  [1m[35m (53.3ms)[0m  [1m[35mCREATE TABLE `units` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `short_name` varchar(255), `full_name` varchar(255), `gramms` float(24), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214116')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCurrencies (20200918214117)
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE TABLE `currencies` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `short_name` varchar(255), `full_name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214117')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTypeOfExchanges (20200918214118)
+  [1m[35m (168.6ms)[0m  [1m[35mCREATE TABLE `type_of_exchanges` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214118')[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTypeOfPayments (20200918214119)
+  [1m[35m (114.2ms)[0m  [1m[35mCREATE TABLE `type_of_payments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214119')[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTypeOfContracts (20200918214120)
+  [1m[35m (94.9ms)[0m  [1m[35mCREATE TABLE `type_of_contracts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214120')[0m
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRateNds (20200918214121)
+  [1m[35m (100.7ms)[0m  [1m[35mCREATE TABLE `rate_nds` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `rate` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214121')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOwnershipForms (20200918214122)
+  [1m[35m (45.5ms)[0m  [1m[35mCREATE TABLE `ownership_forms` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214122')[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePGroups (20200918214123)
+  [1m[35m (44.1ms)[0m  [1m[35mCREATE TABLE `p_groups` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214123')[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePSubgroups (20200918214140)
+  [1m[35m (76.2ms)[0m  [1m[35mCREATE TABLE `p_subgroups` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `p_group_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_p_subgroups_on_p_group_id`  (`p_group_id`), CONSTRAINT `fk_rails_229a42c6f1`
+FOREIGN KEY (`p_group_id`)
+  REFERENCES `p_groups` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214140')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrganizations (20200918214155)
+  [1m[35m (60.8ms)[0m  [1m[35mCREATE TABLE `organizations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `short_name` varchar(255), `full_name` varchar(255), `unp` varchar(255), `legal_address` varchar(255), `phone_or_fax` varchar(255), `email` varchar(255), `is_provider` tinyint(1), `is_buyer` tinyint(1), `is_company` tinyint(1), `ownership_form_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_organizations_on_ownership_form_id`  (`ownership_form_id`), CONSTRAINT `fk_rails_1090125c02`
+FOREIGN KEY (`ownership_form_id`)
+  REFERENCES `ownership_forms` (`id`)
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214155')[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWarehouses (20200918214156)
+  [1m[35m (62.0ms)[0m  [1m[35mCREATE TABLE `warehouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `address` varchar(255), `organization_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_warehouses_on_organization_id`  (`organization_id`), CONSTRAINT `fk_rails_4792852b95`
+FOREIGN KEY (`organization_id`)
+  REFERENCES `organizations` (`id`)
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214156')[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContracts (20200918214208)
+  [1m[35m (116.5ms)[0m  [1m[35mCREATE TABLE `contracts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `series_and_number` varchar(255), `valid_from` date, `valid_for` date, `note` text, `currency_id` bigint NOT NULL, `type_of_exchange_id` bigint NOT NULL, `type_of_payment_id` bigint NOT NULL, `type_of_contract_id` bigint NOT NULL, `provider_id` bigint, `customer_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_contracts_on_currency_id`  (`currency_id`),  INDEX `index_contracts_on_type_of_exchange_id`  (`type_of_exchange_id`),  INDEX `index_contracts_on_type_of_payment_id`  (`type_of_payment_id`),  INDEX `index_contracts_on_type_of_contract_id`  (`type_of_contract_id`),  INDEX `index_contracts_on_provider_id`  (`provider_id`),  INDEX `index_contracts_on_customer_id`  (`customer_id`), CONSTRAINT `fk_rails_f303b32631`
+FOREIGN KEY (`currency_id`)
+  REFERENCES `currencies` (`id`)
+, CONSTRAINT `fk_rails_e4062d4aa1`
+FOREIGN KEY (`type_of_exchange_id`)
+  REFERENCES `type_of_exchanges` (`id`)
+, CONSTRAINT `fk_rails_ec597e215b`
+FOREIGN KEY (`type_of_payment_id`)
+  REFERENCES `type_of_payments` (`id`)
+, CONSTRAINT `fk_rails_3fdf0ef5da`
+FOREIGN KEY (`type_of_contract_id`)
+  REFERENCES `type_of_contracts` (`id`)
+, CONSTRAINT `fk_rails_92d8fef8db`
+FOREIGN KEY (`provider_id`)
+  REFERENCES `organizations` (`id`)
+, CONSTRAINT `fk_rails_a00d802491`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `organizations` (`id`)
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214208')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInvoices (20200918214226)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('2100883994326461855')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2100883994326461855', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateInvoices (20200918214226)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('2100883994326461855')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2100883994326461855', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateInvoices (20200918214226)
+  [1m[35m (205.6ms)[0m  [1m[35mCREATE TABLE `invoices` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `is_closed` tinyint(1), `is_conducted` tinyint(1), `series_and_number` varchar(255), `date_and_time` datetime, `selling_on_commission` tinyint(1), `strings_count` int, `total_count` int, `summa` float(24), `summa_nds` float(24), `summa_with_nds` float(24), `record_summa` float(24), `retail_summa` float(24), `pre_assessment_summa` float(24), `write_down_summa` float(24), `note` varchar(255), `invoice_type_id` bigint NOT NULL, `operation_id` bigint NOT NULL, `currency_id` bigint NOT NULL, `contract_id` bigint NOT NULL, `agreement_id` bigint NOT NULL, `status_of_price_tag_printing_id` bigint NOT NULL, `status_of_acceptance_id` bigint NOT NULL, `status_of_booting_in_equipment_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_invoices_on_invoice_type_id`  (`invoice_type_id`),  INDEX `index_invoices_on_operation_id`  (`operation_id`),  INDEX `index_invoices_on_currency_id`  (`currency_id`),  INDEX `index_invoices_on_contract_id`  (`contract_id`),  INDEX `index_invoices_on_agreement_id`  (`agreement_id`),  INDEX `index_invoices_on_status_of_price_tag_printing_id`  (`status_of_price_tag_printing_id`),  INDEX `index_invoices_on_status_of_acceptance_id`  (`status_of_acceptance_id`),  INDEX `index_invoices_on_status_of_booting_in_equipment_id`  (`status_of_booting_in_equipment_id`), CONSTRAINT `fk_rails_52ff19d980`
+FOREIGN KEY (`invoice_type_id`)
+  REFERENCES `invoice_types` (`id`)
+, CONSTRAINT `fk_rails_67c0e7700d`
+FOREIGN KEY (`operation_id`)
+  REFERENCES `operations` (`id`)
+, CONSTRAINT `fk_rails_44a7fbeec1`
+FOREIGN KEY (`currency_id`)
+  REFERENCES `currencies` (`id`)
+, CONSTRAINT `fk_rails_c5bf8c7cce`
+FOREIGN KEY (`contract_id`)
+  REFERENCES `contracts` (`id`)
+, CONSTRAINT `fk_rails_7b390d72bd`
+FOREIGN KEY (`agreement_id`)
+  REFERENCES `agreements` (`id`)
+, CONSTRAINT `fk_rails_ab9fd4bd21`
+FOREIGN KEY (`status_of_price_tag_printing_id`)
+  REFERENCES `status_of_price_tag_printings` (`id`)
+, CONSTRAINT `fk_rails_622bda6f07`
+FOREIGN KEY (`status_of_acceptance_id`)
+  REFERENCES `status_of_acceptances` (`id`)
+, CONSTRAINT `fk_rails_9e195152a2`
+FOREIGN KEY (`status_of_booting_in_equipment_id`)
+  REFERENCES `status_of_booting_in_equipments` (`id`)
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214226')[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActOfDiscrepancies (20200918214241)
+  [1m[35m (181.7ms)[0m  [1m[35mCREATE TABLE `act_of_discrepancies` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `is_closed` tinyint(1), `is_conducted` tinyint(1), `series_and_number` varchar(255), `date_and_time` datetime, `strings_count` int, `total_count` int, `summa_nds` float(24), `summa_with_nds` float(24), `note` varchar(255), `invoice_type_id` bigint NOT NULL, `operation_id` bigint NOT NULL, `currency_id` bigint NOT NULL, `invoice_id` bigint NOT NULL, `provider_warehouse_id` bigint, `customer_warehouse_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_act_of_discrepancies_on_invoice_type_id`  (`invoice_type_id`),  INDEX `index_act_of_discrepancies_on_operation_id`  (`operation_id`),  INDEX `index_act_of_discrepancies_on_currency_id`  (`currency_id`),  INDEX `index_act_of_discrepancies_on_invoice_id`  (`invoice_id`),  INDEX `index_act_of_discrepancies_on_provider_warehouse_id`  (`provider_warehouse_id`),  INDEX `index_act_of_discrepancies_on_customer_warehouse_id`  (`customer_warehouse_id`), CONSTRAINT `fk_rails_700fc12b56`
+FOREIGN KEY (`invoice_type_id`)
+  REFERENCES `invoice_types` (`id`)
+, CONSTRAINT `fk_rails_1eafb3fd93`
+FOREIGN KEY (`operation_id`)
+  REFERENCES `operations` (`id`)
+, CONSTRAINT `fk_rails_5376020f63`
+FOREIGN KEY (`currency_id`)
+  REFERENCES `currencies` (`id`)
+, CONSTRAINT `fk_rails_27bed12baa`
+FOREIGN KEY (`invoice_id`)
+  REFERENCES `invoices` (`id`)
+, CONSTRAINT `fk_rails_81df1e899f`
+FOREIGN KEY (`provider_warehouse_id`)
+  REFERENCES `warehouses` (`id`)
+, CONSTRAINT `fk_rails_ceb43139b0`
+FOREIGN KEY (`customer_warehouse_id`)
+  REFERENCES `warehouses` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214241')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInvoiceProducts (20200918214251)
+  [1m[35m (98.1ms)[0m  [1m[35mCREATE TABLE `invoice_products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `full_name` varchar(255), `short_name` varchar(255), `code` varchar(255), `price` float(24), `rate_nds_id` bigint NOT NULL, `summa_nds` float(24), `cost` float(24), `unit_id` bigint NOT NULL, `p_subgroup_id` bigint NOT NULL, `invoice_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_invoice_products_on_rate_nds_id`  (`rate_nds_id`),  INDEX `index_invoice_products_on_unit_id`  (`unit_id`),  INDEX `index_invoice_products_on_p_subgroup_id`  (`p_subgroup_id`),  INDEX `index_invoice_products_on_invoice_id`  (`invoice_id`), CONSTRAINT `fk_rails_8bf3857ccd`
+FOREIGN KEY (`rate_nds_id`)
+  REFERENCES `rate_nds` (`id`)
+, CONSTRAINT `fk_rails_7ef3ec2a03`
+FOREIGN KEY (`unit_id`)
+  REFERENCES `units` (`id`)
+, CONSTRAINT `fk_rails_3e0c192139`
+FOREIGN KEY (`p_subgroup_id`)
+  REFERENCES `p_subgroups` (`id`)
+, CONSTRAINT `fk_rails_994875f75c`
+FOREIGN KEY (`invoice_id`)
+  REFERENCES `invoices` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214251')[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActOfDiscrepanciesProducts (20200918214252)
+  [1m[35m (96.2ms)[0m  [1m[35mCREATE TABLE `act_of_discrepancies_products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `full_name` varchar(255), `short_name` varchar(255), `code` varchar(255), `price` float(24), `rate_nds_id` bigint NOT NULL, `summa_nds` float(24), `cost` float(24), `unit_id` bigint NOT NULL, `p_subgroup_id` bigint NOT NULL, `act_of_discrepancy_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_act_of_discrepancies_products_on_rate_nds_id`  (`rate_nds_id`),  INDEX `index_act_of_discrepancies_products_on_unit_id`  (`unit_id`),  INDEX `index_act_of_discrepancies_products_on_p_subgroup_id`  (`p_subgroup_id`),  INDEX `index_act_of_discrepancies_products_on_act_of_discrepancy_id`  (`act_of_discrepancy_id`), CONSTRAINT `fk_rails_77881bc260`
+FOREIGN KEY (`rate_nds_id`)
+  REFERENCES `rate_nds` (`id`)
+, CONSTRAINT `fk_rails_59d7ca24ca`
+FOREIGN KEY (`unit_id`)
+  REFERENCES `units` (`id`)
+, CONSTRAINT `fk_rails_a76297ae96`
+FOREIGN KEY (`p_subgroup_id`)
+  REFERENCES `p_subgroups` (`id`)
+, CONSTRAINT `fk_rails_7071f2114a`
+FOREIGN KEY (`act_of_discrepancy_id`)
+  REFERENCES `act_of_discrepancies` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214252')[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToPGroup (20200918214556)
+  [1m[35m (34.8ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_p_groups_on_name`  ON `p_groups` (`name`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214556')[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToPSubgroup (20200918214608)
+  [1m[35m (42.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_p_subgroups_on_name`  ON `p_subgroups` (`name`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214608')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-09-18 22:07:09.820472', '2020-09-18 22:07:09.820472')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('2100883994326461855')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-09-19 01:10:01 +0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.3ms | Allocations: 295)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 1538)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-19 01:10:04 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/akira/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.2ms | Allocations: 179)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started POST "/customs/act_of_discrepancies" for ::1 at 2020-09-19 01:23:09 +0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Customs::ActOfDiscrepanciesController#create as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "act_of_discrepancy"=>{"invoice_type_id"=>2, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2}}
+  [1m[36mInvoiceType Load (0.5ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types` WHERE `invoice_types`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:33:in `post_method_helper'
+Completed 404 Not Found in 19ms (ActiveRecord: 6.0ms | Allocations: 2835)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find InvoiceType with 'id'=2):
+  
+app/controllers/customs/act_of_discrepancies_controller.rb:33:in `post_method_helper'
+app/controllers/customs/act_of_discrepancies_controller.rb:10:in `create'
+Started GET "/customs/act_of_discrepancies" for ::1 at 2020-09-19 01:23:23 +0300
+Processing by Customs::ActOfDiscrepanciesController#index as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "act_of_discrepancy"=>{"invoice_type_id"=>2, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2}}
+  [1m[36mActOfDiscrepancy Load (0.4ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies` ORDER BY `act_of_discrepancies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:22:in `each'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 1028)
+
+
+Started GET "/guides/rate_ndses" for ::1 at 2020-09-19 01:56:25 +0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+NameError (uninitialized constant Guides::RateNdsesController::RateNds):
+  
+app/controllers/guides/rate_ndses_controller.rb:5:in `initialize'
+Started GET "/guides/rate_ndses" for ::1 at 2020-09-19 01:57:06 +0300
+Processing by Guides::RateNdsesController#index as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "rate_ndse"=>{"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2}}
+  [1m[36mRateNd Load (0.4ms)[0m  [1m[34mSELECT `rate_nds`.* FROM `rate_nds` ORDER BY `rate_nds`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/rate_ndses_controller.rb:21:in `each'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 4.6ms | Allocations: 1591)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mActOfDiscrepancy Load (0.4ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies`[0m
+  [1m[36mInvoice Load (0.4ms)[0m  [1m[34mSELECT `invoices`.* FROM `invoices`[0m
+  [1m[36mWarehouse Load (0.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses`[0m
+  [1m[36mInvoiceType Load (0.3ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types`[0m
+  [1m[36mOperation Load (0.5ms)[0m  [1m[34mSELECT `operations`.* FROM `operations`[0m
+  [1m[36mAgreement Load (0.5ms)[0m  [1m[34mSELECT `agreements`.* FROM `agreements`[0m
+  [1m[36mContract Load (0.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mActOfDiscrepancy Load (0.4ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies`[0m
+  [1m[36mInvoice Load (0.4ms)[0m  [1m[34mSELECT `invoices`.* FROM `invoices`[0m
+  [1m[36mWarehouse Load (0.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses`[0m
+  [1m[36mInvoiceType Load (0.3ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types`[0m
+  [1m[36mOperation Load (0.3ms)[0m  [1m[34mSELECT `operations`.* FROM `operations`[0m
+  [1m[36mAgreement Load (0.3ms)[0m  [1m[34mSELECT `agreements`.* FROM `agreements`[0m
+  [1m[36mContract Load (0.3ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mActOfDiscrepancy Load (0.4ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies`[0m
+  [1m[36mInvoice Load (0.4ms)[0m  [1m[34mSELECT `invoices`.* FROM `invoices`[0m
+  [1m[36mWarehouse Load (0.3ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses`[0m
+  [1m[36mInvoiceType Load (0.3ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types`[0m
+  [1m[36mOperation Load (0.3ms)[0m  [1m[34mSELECT `operations`.* FROM `operations`[0m
+  [1m[36mAgreement Load (0.3ms)[0m  [1m[34mSELECT `agreements`.* FROM `agreements`[0m
+  [1m[36mContract Load (0.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mActOfDiscrepancy Load (0.3ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies`[0m
+  [1m[36mInvoice Load (0.4ms)[0m  [1m[34mSELECT `invoices`.* FROM `invoices`[0m
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses`[0m
+  [1m[36mInvoiceType Load (0.4ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types`[0m
+  [1m[36mOperation Load (0.3ms)[0m  [1m[34mSELECT `operations`.* FROM `operations`[0m
+  [1m[36mAgreement Load (0.3ms)[0m  [1m[34mSELECT `agreements`.* FROM `agreements`[0m
+  [1m[36mContract Load (0.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts`[0m
+  [1m[36mPSubgroup Load (0.4ms)[0m  [1m[34mSELECT `p_subgroups`.* FROM `p_subgroups`[0m
+  [1m[36mPGroup Load (0.4ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups`[0m
+  [1m[36mUnit Load (0.3ms)[0m  [1m[34mSELECT `units`.* FROM `units`[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations`[0m
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies`[0m
+  [1m[36mOwnershipForm Load (0.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms`[0m
+  [1m[36mStatusOfAcceptance Load (0.4ms)[0m  [1m[34mSELECT `status_of_acceptances`.* FROM `status_of_acceptances`[0m
+  [1m[36mStatusOfBootingInEquipment Load (0.4ms)[0m  [1m[34mSELECT `status_of_booting_in_equipments`.* FROM `status_of_booting_in_equipments`[0m
+  [1m[36mStatusOfPriceTagPrinting Load (0.3ms)[0m  [1m[34mSELECT `status_of_price_tag_printings`.* FROM `status_of_price_tag_printings`[0m
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts`[0m
+  [1m[36mTypeOfExchange Load (0.3ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges`[0m
+  [1m[36mTypeOfPayment Load (0.4ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatusOfAcceptance Create (0.3ms)[0m  [1m[32mINSERT INTO `status_of_acceptances` (`name`, `created_at`, `updated_at`) VALUES ('ожидается приемка', '2020-09-18 23:09:38.830701', '2020-09-18 23:09:38.830701')[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatusOfBootingInEquipment Create (0.5ms)[0m  [1m[32mINSERT INTO `status_of_booting_in_equipments` (`name`, `created_at`, `updated_at`) VALUES ('успешно загружен', '2020-09-18 23:09:38.846479', '2020-09-18 23:09:38.846479')[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfPayment Create (0.3ms)[0m  [1m[32mINSERT INTO `type_of_payments` (`name`, `created_at`, `updated_at`) VALUES ('предварительная оплата', '2020-09-18 23:09:38.875783', '2020-09-18 23:09:38.875783')[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.3ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор поставки', '2020-09-18 23:09:38.892642', '2020-09-18 23:09:38.892642')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.3ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор купли-продажи', '2020-09-18 23:09:38.905282', '2020-09-18 23:09:38.905282')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор об оказании услуг', '2020-09-18 23:09:38.917284', '2020-09-18 23:09:38.917284')[0m
+  [1m[35m (50.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.7ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор розничной купли-продажи', '2020-09-18 23:09:38.975406', '2020-09-18 23:09:38.975406')[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор складского хранения', '2020-09-18 23:09:38.997951', '2020-09-18 23:09:38.997951')[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор комиссии', '2020-09-18 23:09:39.010452', '2020-09-18 23:09:39.010452')[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор перевозки грузов', '2020-09-18 23:09:39.025066', '2020-09-18 23:09:39.025066')[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.3ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Открытое Акционерное Общество', '2020-09-18 23:09:39.047253', '2020-09-18 23:09:39.047253')[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.3ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Республиканское Унитарное Предприятие', '2020-09-18 23:09:39.058460', '2020-09-18 23:09:39.058460')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.4ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Частное Унитарное Предприятие', '2020-09-18 23:09:39.070758', '2020-09-18 23:09:39.070758')[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.4ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Коммунальное Унитарное Предприятие', '2020-09-18 23:09:39.087667', '2020-09-18 23:09:39.087667')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.3ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Закрытое Акционерное общество', '2020-09-18 23:09:39.101116', '2020-09-18 23:09:39.101116')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.4ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Общество с Ограниченной ответственностью', '2020-09-18 23:09:39.113241', '2020-09-18 23:09:39.113241')[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInvoiceType Create (0.5ms)[0m  [1m[32mINSERT INTO `invoice_types` (`name`, `created_at`, `updated_at`) VALUES ('закупка', '2020-09-18 23:09:39.134659', '2020-09-18 23:09:39.134659')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInvoiceType Create (0.4ms)[0m  [1m[32mINSERT INTO `invoice_types` (`name`, `created_at`, `updated_at`) VALUES ('возврат', '2020-09-18 23:09:39.146668', '2020-09-18 23:09:39.146668')[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PGroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:133)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPGroup Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `p_groups` WHERE `p_groups`.`name` = BINARY 'продовольственное' LIMIT 1[0m
+  [1m[36mPGroup Create (0.3ms)[0m  [1m[32mINSERT INTO `p_groups` (`name`, `created_at`, `updated_at`) VALUES ('продовольственное', '2020-09-18 23:09:39.172636', '2020-09-18 23:09:39.172636')[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PGroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:133)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPGroup Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `p_groups` WHERE `p_groups`.`name` = BINARY 'непродовольственное' LIMIT 1[0m
+  [1m[36mPGroup Create (0.4ms)[0m  [1m[32mINSERT INTO `p_groups` (`name`, `created_at`, `updated_at`) VALUES ('непродовольственное', '2020-09-18 23:09:39.189492', '2020-09-18 23:09:39.189492')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.3ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('₽', 'российский рубль', '2020-09-18 23:09:39.205986', '2020-09-18 23:09:39.205986')[0m
+  [1m[35m (20.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.9ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('Br', 'белорусский рубль', '2020-09-18 23:09:39.231437', '2020-09-18 23:09:39.231437')[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.4ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('$', 'доллар США', '2020-09-18 23:09:39.248015', '2020-09-18 23:09:39.248015')[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.7ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('€', 'евро', '2020-09-18 23:09:39.262885', '2020-09-18 23:09:39.262885')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPGroup Load (0.4ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` WHERE `p_groups`.`name` = 'продовольственное' LIMIT 1[0m
+  [1m[36mPGroup Load (0.3ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` WHERE `p_groups`.`name` = 'непродовольственное' LIMIT 1[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PSubgroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:146)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPSubgroup Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `p_subgroups` WHERE `p_subgroups`.`name` = BINARY 'молочные товары' LIMIT 1[0m
+  [1m[36mPSubgroup Create (0.3ms)[0m  [1m[32mINSERT INTO `p_subgroups` (`name`, `p_group_id`, `created_at`, `updated_at`) VALUES ('молочные товары', 1, '2020-09-18 23:09:39.320133', '2020-09-18 23:09:39.320133')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PSubgroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:146)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPSubgroup Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `p_subgroups` WHERE `p_subgroups`.`name` = BINARY 'кисло-молочные' LIMIT 1[0m
+  [1m[36mPSubgroup Create (0.4ms)[0m  [1m[32mINSERT INTO `p_subgroups` (`name`, `p_group_id`, `created_at`, `updated_at`) VALUES ('кисло-молочные', 1, '2020-09-18 23:09:39.334834', '2020-09-18 23:09:39.334834')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.3ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('л.', 'литры', 1000.0, '2020-09-18 23:09:39.354141', '2020-09-18 23:09:39.354141')[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.4ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('шт.', 'штуки', 20000.0, '2020-09-18 23:09:39.367126', '2020-09-18 23:09:39.367126')[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.4ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('кг', 'килограммы', 1000.0, '2020-09-18 23:09:39.382669', '2020-09-18 23:09:39.382669')[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.3ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('г.', 'граммы', 1.0, '2020-09-18 23:09:39.398463', '2020-09-18 23:09:39.398463')[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUnit Load (0.4ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`full_name` = 'литры' LIMIT 1[0m
+  [1m[36mUnit Load (0.4ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`full_name` = 'граммы' LIMIT 1[0m
+  [1m[36mOwnershipForm Load (4.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`name` = 'Общество с Ограниченной ответственностью' LIMIT 1[0m
+  [1m[36mOwnershipForm Load (0.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`name` = 'Закрытое Акционерное общество' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Create (0.3ms)[0m  [1m[32mINSERT INTO `organizations` (`short_name`, `full_name`, `unp`, `legal_address`, `is_provider`, `is_buyer`, `is_company`, `ownership_form_id`, `created_at`, `updated_at`) VALUES ('«Молочный мир»', 'OOO «Молочный мир»', '567456998', 'Независимости 35, 23', TRUE, FALSE, TRUE, 6, '2020-09-18 23:09:39.438764', '2020-09-18 23:09:39.438764')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Create (0.3ms)[0m  [1m[32mINSERT INTO `organizations` (`short_name`, `full_name`, `unp`, `legal_address`, `is_provider`, `is_buyer`, `is_company`, `ownership_form_id`, `created_at`, `updated_at`) VALUES ('«Златка»', 'ЧТУП «Златка»', '237456998', 'Якубовского 78, 93', FALSE, TRUE, TRUE, 5, '2020-09-18 23:09:39.450010', '2020-09-18 23:09:39.450010')[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`full_name` = 'доллар США' LIMIT 1[0m
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`name` = '' LIMIT 1[0m
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`name` = 'договор об оказании услуг' LIMIT 1[0m
+  [1m[36mTypeOfPayment Load (0.4ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`name` = 'предварительная оплата' LIMIT 1[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_provider` = TRUE LIMIT 1[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_buyer` = TRUE LIMIT 1[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`short_name` = '«Молочный мир»' LIMIT 1[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`short_name` = '«Златка»' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO `warehouses` (`address`, `organization_id`, `created_at`, `updated_at`) VALUES ('Красноармейская 7а', 1, '2020-09-18 23:09:39.499463', '2020-09-18 23:09:39.499463')[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWarehouse Create (0.4ms)[0m  [1m[32mINSERT INTO `warehouses` (`address`, `organization_id`, `created_at`, `updated_at`) VALUES ('Неманская 17, 32', 2, '2020-09-18 23:09:39.510381', '2020-09-18 23:09:39.510381')[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/guides/units" for ::1 at 2020-09-19 02:10:31 +0300
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Guides::UnitsController#index as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "unit"=>{}}
+  [1m[36mUnit Load (0.4ms)[0m  [1m[34mSELECT `units`.* FROM `units` ORDER BY `units`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/units_controller.rb:22:in `each'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 4416)
+
+
+Started GET "/guides/organizations" for ::1 at 2020-09-19 02:13:07 +0300
+Processing by Guides::OrganizationsController#index as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "organization"=>{}}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (0.9ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (0.7ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (1.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.6ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 87ms (Views: 10.8ms | ActiveRecord: 14.0ms | Allocations: 19250)
+
+
+Started GET "/guides/warehouses" for ::1 at 2020-09-19 02:13:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/guides/warehouses"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/warehouses/warehouses" for ::1 at 2020-09-19 02:13:28 +0300
+Processing by Warehouses::WarehousesController#index as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "warehouse"=>{}}
+  [1m[36mWarehouse Load (0.8ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` ORDER BY `warehouses`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `each'
+  [1m[36mOrganization Load (1.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `block in index'
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/warehouses/warehouses_controller.rb:21:in `block in index'
+Completed 200 OK in 23ms (Views: 9.7ms | ActiveRecord: 2.7ms | Allocations: 2953)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2100883994326461855', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('2100883994326461855')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2100883994326461855', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('2100883994326461855')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (632.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `our_server_api_development`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (12.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `our_server_api_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE DATABASE `our_server_api_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE DATABASE `our_server_api_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (48.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (47.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('2100883994326461855', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateInvoiceTypes (20200918214110)
+  [1m[35m (46.2ms)[0m  [1m[35mCREATE TABLE `invoice_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214110')[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOperations (20200918214111)
+  [1m[35m (165.3ms)[0m  [1m[35mCREATE TABLE `operations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214111')[0m
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAgreements (20200918214112)
+  [1m[35m (48.7ms)[0m  [1m[35mCREATE TABLE `agreements` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214112')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStatusOfPriceTagPrintings (20200918214113)
+  [1m[35m (45.6ms)[0m  [1m[35mCREATE TABLE `status_of_price_tag_printings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214113')[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStatusOfAcceptances (20200918214114)
+  [1m[35m (46.1ms)[0m  [1m[35mCREATE TABLE `status_of_acceptances` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214114')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStatusOfBootingInEquipments (20200918214115)
+  [1m[35m (42.7ms)[0m  [1m[35mCREATE TABLE `status_of_booting_in_equipments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214115')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUnits (20200918214116)
+  [1m[35m (48.3ms)[0m  [1m[35mCREATE TABLE `units` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `short_name` varchar(255), `full_name` varchar(255), `gramms` float(24), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214116')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCurrencies (20200918214117)
+  [1m[35m (48.1ms)[0m  [1m[35mCREATE TABLE `currencies` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `short_name` varchar(255), `full_name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214117')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTypeOfExchanges (20200918214118)
+  [1m[35m (44.4ms)[0m  [1m[35mCREATE TABLE `type_of_exchanges` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214118')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTypeOfPayments (20200918214119)
+  [1m[35m (41.5ms)[0m  [1m[35mCREATE TABLE `type_of_payments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214119')[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTypeOfContracts (20200918214120)
+  [1m[35m (44.7ms)[0m  [1m[35mCREATE TABLE `type_of_contracts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214120')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRateNds (20200918214121)
+  [1m[35m (90.1ms)[0m  [1m[35mCREATE TABLE `rate_nds` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `rate` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214121')[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOwnershipForms (20200918214122)
+  [1m[35m (47.9ms)[0m  [1m[35mCREATE TABLE `ownership_forms` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214122')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePGroups (20200918214123)
+  [1m[35m (46.9ms)[0m  [1m[35mCREATE TABLE `p_groups` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214123')[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePSubgroups (20200918214140)
+  [1m[35m (52.5ms)[0m  [1m[35mCREATE TABLE `p_subgroups` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `p_group_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_p_subgroups_on_p_group_id`  (`p_group_id`), CONSTRAINT `fk_rails_229a42c6f1`
+FOREIGN KEY (`p_group_id`)
+  REFERENCES `p_groups` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214140')[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrganizations (20200918214155)
+  [1m[35m (55.3ms)[0m  [1m[35mCREATE TABLE `organizations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `short_name` varchar(255), `full_name` varchar(255), `unp` varchar(255), `legal_address` varchar(255), `phone_or_fax` varchar(255), `email` varchar(255), `is_provider` tinyint(1), `is_buyer` tinyint(1), `is_company` tinyint(1), `ownership_form_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_organizations_on_ownership_form_id`  (`ownership_form_id`), CONSTRAINT `fk_rails_1090125c02`
+FOREIGN KEY (`ownership_form_id`)
+  REFERENCES `ownership_forms` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214155')[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWarehouses (20200918214156)
+  [1m[35m (61.2ms)[0m  [1m[35mCREATE TABLE `warehouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `address` varchar(255), `organization_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_warehouses_on_organization_id`  (`organization_id`), CONSTRAINT `fk_rails_4792852b95`
+FOREIGN KEY (`organization_id`)
+  REFERENCES `organizations` (`id`)
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214156')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContracts (20200918214208)
+  [1m[35m (116.9ms)[0m  [1m[35mCREATE TABLE `contracts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `series_and_number` varchar(255), `valid_from` date, `valid_for` date, `note` text, `currency_id` bigint NOT NULL, `type_of_exchange_id` bigint NOT NULL, `type_of_payment_id` bigint NOT NULL, `type_of_contract_id` bigint NOT NULL, `provider_id` bigint, `customer_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_contracts_on_currency_id`  (`currency_id`),  INDEX `index_contracts_on_type_of_exchange_id`  (`type_of_exchange_id`),  INDEX `index_contracts_on_type_of_payment_id`  (`type_of_payment_id`),  INDEX `index_contracts_on_type_of_contract_id`  (`type_of_contract_id`),  INDEX `index_contracts_on_provider_id`  (`provider_id`),  INDEX `index_contracts_on_customer_id`  (`customer_id`), CONSTRAINT `fk_rails_f303b32631`
+FOREIGN KEY (`currency_id`)
+  REFERENCES `currencies` (`id`)
+, CONSTRAINT `fk_rails_e4062d4aa1`
+FOREIGN KEY (`type_of_exchange_id`)
+  REFERENCES `type_of_exchanges` (`id`)
+, CONSTRAINT `fk_rails_ec597e215b`
+FOREIGN KEY (`type_of_payment_id`)
+  REFERENCES `type_of_payments` (`id`)
+, CONSTRAINT `fk_rails_3fdf0ef5da`
+FOREIGN KEY (`type_of_contract_id`)
+  REFERENCES `type_of_contracts` (`id`)
+, CONSTRAINT `fk_rails_92d8fef8db`
+FOREIGN KEY (`provider_id`)
+  REFERENCES `organizations` (`id`)
+, CONSTRAINT `fk_rails_a00d802491`
+FOREIGN KEY (`customer_id`)
+  REFERENCES `organizations` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214208')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInvoices (20200918214226)
+  [1m[35m (148.5ms)[0m  [1m[35mCREATE TABLE `invoices` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `is_closed` tinyint(1), `is_conducted` tinyint(1), `series_and_number` varchar(255), `date_and_time` datetime, `selling_on_commission` tinyint(1), `strings_count` int, `total_count` int, `summa` float(24), `summa_nds` float(24), `summa_with_nds` float(24), `record_summa` float(24), `retail_summa` float(24), `pre_assessment_summa` float(24), `write_down_summa` float(24), `note` varchar(255), `invoice_type_id` bigint NOT NULL, `operation_id` bigint NOT NULL, `currency_id` bigint NOT NULL, `contract_id` bigint NOT NULL, `agreement_id` bigint NOT NULL, `status_of_price_tag_printing_id` bigint NOT NULL, `status_of_acceptance_id` bigint NOT NULL, `status_of_booting_in_equipment_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_invoices_on_invoice_type_id`  (`invoice_type_id`),  INDEX `index_invoices_on_operation_id`  (`operation_id`),  INDEX `index_invoices_on_currency_id`  (`currency_id`),  INDEX `index_invoices_on_contract_id`  (`contract_id`),  INDEX `index_invoices_on_agreement_id`  (`agreement_id`),  INDEX `index_invoices_on_status_of_price_tag_printing_id`  (`status_of_price_tag_printing_id`),  INDEX `index_invoices_on_status_of_acceptance_id`  (`status_of_acceptance_id`),  INDEX `index_invoices_on_status_of_booting_in_equipment_id`  (`status_of_booting_in_equipment_id`), CONSTRAINT `fk_rails_52ff19d980`
+FOREIGN KEY (`invoice_type_id`)
+  REFERENCES `invoice_types` (`id`)
+, CONSTRAINT `fk_rails_67c0e7700d`
+FOREIGN KEY (`operation_id`)
+  REFERENCES `operations` (`id`)
+, CONSTRAINT `fk_rails_44a7fbeec1`
+FOREIGN KEY (`currency_id`)
+  REFERENCES `currencies` (`id`)
+, CONSTRAINT `fk_rails_c5bf8c7cce`
+FOREIGN KEY (`contract_id`)
+  REFERENCES `contracts` (`id`)
+, CONSTRAINT `fk_rails_7b390d72bd`
+FOREIGN KEY (`agreement_id`)
+  REFERENCES `agreements` (`id`)
+, CONSTRAINT `fk_rails_ab9fd4bd21`
+FOREIGN KEY (`status_of_price_tag_printing_id`)
+  REFERENCES `status_of_price_tag_printings` (`id`)
+, CONSTRAINT `fk_rails_622bda6f07`
+FOREIGN KEY (`status_of_acceptance_id`)
+  REFERENCES `status_of_acceptances` (`id`)
+, CONSTRAINT `fk_rails_9e195152a2`
+FOREIGN KEY (`status_of_booting_in_equipment_id`)
+  REFERENCES `status_of_booting_in_equipments` (`id`)
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214226')[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActOfDiscrepancies (20200918214241)
+  [1m[35m (119.7ms)[0m  [1m[35mCREATE TABLE `act_of_discrepancies` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `is_closed` tinyint(1), `is_conducted` tinyint(1), `series_and_number` varchar(255), `date_and_time` datetime, `strings_count` int, `total_count` int, `summa_nds` float(24), `summa_with_nds` float(24), `note` varchar(255), `invoice_type_id` bigint NOT NULL, `operation_id` bigint NOT NULL, `currency_id` bigint NOT NULL, `invoice_id` bigint NOT NULL, `provider_warehouse_id` bigint, `customer_warehouse_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_act_of_discrepancies_on_invoice_type_id`  (`invoice_type_id`),  INDEX `index_act_of_discrepancies_on_operation_id`  (`operation_id`),  INDEX `index_act_of_discrepancies_on_currency_id`  (`currency_id`),  INDEX `index_act_of_discrepancies_on_invoice_id`  (`invoice_id`),  INDEX `index_act_of_discrepancies_on_provider_warehouse_id`  (`provider_warehouse_id`),  INDEX `index_act_of_discrepancies_on_customer_warehouse_id`  (`customer_warehouse_id`), CONSTRAINT `fk_rails_700fc12b56`
+FOREIGN KEY (`invoice_type_id`)
+  REFERENCES `invoice_types` (`id`)
+, CONSTRAINT `fk_rails_1eafb3fd93`
+FOREIGN KEY (`operation_id`)
+  REFERENCES `operations` (`id`)
+, CONSTRAINT `fk_rails_5376020f63`
+FOREIGN KEY (`currency_id`)
+  REFERENCES `currencies` (`id`)
+, CONSTRAINT `fk_rails_27bed12baa`
+FOREIGN KEY (`invoice_id`)
+  REFERENCES `invoices` (`id`)
+, CONSTRAINT `fk_rails_81df1e899f`
+FOREIGN KEY (`provider_warehouse_id`)
+  REFERENCES `warehouses` (`id`)
+, CONSTRAINT `fk_rails_ceb43139b0`
+FOREIGN KEY (`customer_warehouse_id`)
+  REFERENCES `warehouses` (`id`)
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214241')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInvoiceProducts (20200918214251)
+  [1m[35m (99.9ms)[0m  [1m[35mCREATE TABLE `invoice_products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `full_name` varchar(255), `short_name` varchar(255), `code` varchar(255), `price` float(24), `rate_nds_id` bigint NOT NULL, `summa_nds` float(24), `cost` float(24), `unit_id` bigint NOT NULL, `p_subgroup_id` bigint NOT NULL, `invoice_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_invoice_products_on_rate_nds_id`  (`rate_nds_id`),  INDEX `index_invoice_products_on_unit_id`  (`unit_id`),  INDEX `index_invoice_products_on_p_subgroup_id`  (`p_subgroup_id`),  INDEX `index_invoice_products_on_invoice_id`  (`invoice_id`), CONSTRAINT `fk_rails_8bf3857ccd`
+FOREIGN KEY (`rate_nds_id`)
+  REFERENCES `rate_nds` (`id`)
+, CONSTRAINT `fk_rails_7ef3ec2a03`
+FOREIGN KEY (`unit_id`)
+  REFERENCES `units` (`id`)
+, CONSTRAINT `fk_rails_3e0c192139`
+FOREIGN KEY (`p_subgroup_id`)
+  REFERENCES `p_subgroups` (`id`)
+, CONSTRAINT `fk_rails_994875f75c`
+FOREIGN KEY (`invoice_id`)
+  REFERENCES `invoices` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214251')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActOfDiscrepanciesProducts (20200918214252)
+  [1m[35m (71.6ms)[0m  [1m[35mCREATE TABLE `act_of_discrepancies_products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `invoice_product_id` bigint NOT NULL, `act_of_discrepancy_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_act_of_discrepancies_products_on_invoice_product_id`  (`invoice_product_id`),  INDEX `index_act_of_discrepancies_products_on_act_of_discrepancy_id`  (`act_of_discrepancy_id`), CONSTRAINT `fk_rails_aabb0708c3`
+FOREIGN KEY (`invoice_product_id`)
+  REFERENCES `invoice_products` (`id`)
+, CONSTRAINT `fk_rails_7071f2114a`
+FOREIGN KEY (`act_of_discrepancy_id`)
+  REFERENCES `act_of_discrepancies` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214252')[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToPGroup (20200918214556)
+  [1m[35m (32.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_p_groups_on_name`  ON `p_groups` (`name`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214556')[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToPSubgroup (20200918214608)
+  [1m[35m (43.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_p_subgroups_on_name`  ON `p_subgroups` (`name`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200918214608')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-09-18 23:27:32.836702', '2020-09-18 23:27:32.836702')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('2100883994326461855')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mActOfDiscrepancy Load (0.4ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies`[0m
+  [1m[36mInvoice Load (0.4ms)[0m  [1m[34mSELECT `invoices`.* FROM `invoices`[0m
+  [1m[36mWarehouse Load (0.4ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses`[0m
+  [1m[36mInvoiceType Load (0.4ms)[0m  [1m[34mSELECT `invoice_types`.* FROM `invoice_types`[0m
+  [1m[36mOperation Load (0.4ms)[0m  [1m[34mSELECT `operations`.* FROM `operations`[0m
+  [1m[36mAgreement Load (0.3ms)[0m  [1m[34mSELECT `agreements`.* FROM `agreements`[0m
+  [1m[36mContract Load (0.4ms)[0m  [1m[34mSELECT `contracts`.* FROM `contracts`[0m
+  [1m[36mPSubgroup Load (0.4ms)[0m  [1m[34mSELECT `p_subgroups`.* FROM `p_subgroups`[0m
+  [1m[36mPGroup Load (0.4ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups`[0m
+  [1m[36mUnit Load (0.4ms)[0m  [1m[34mSELECT `units`.* FROM `units`[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations`[0m
+  [1m[36mCurrency Load (0.3ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies`[0m
+  [1m[36mOwnershipForm Load (0.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms`[0m
+  [1m[36mStatusOfAcceptance Load (0.4ms)[0m  [1m[34mSELECT `status_of_acceptances`.* FROM `status_of_acceptances`[0m
+  [1m[36mStatusOfBootingInEquipment Load (0.4ms)[0m  [1m[34mSELECT `status_of_booting_in_equipments`.* FROM `status_of_booting_in_equipments`[0m
+  [1m[36mStatusOfPriceTagPrinting Load (0.4ms)[0m  [1m[34mSELECT `status_of_price_tag_printings`.* FROM `status_of_price_tag_printings`[0m
+  [1m[36mTypeOfContract Load (0.3ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts`[0m
+  [1m[36mTypeOfExchange Load (0.3ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges`[0m
+  [1m[36mTypeOfPayment Load (0.3ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatusOfAcceptance Create (0.3ms)[0m  [1m[32mINSERT INTO `status_of_acceptances` (`name`, `created_at`, `updated_at`) VALUES ('ожидается приемка', '2020-09-18 23:27:48.479955', '2020-09-18 23:27:48.479955')[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatusOfBootingInEquipment Create (0.5ms)[0m  [1m[32mINSERT INTO `status_of_booting_in_equipments` (`name`, `created_at`, `updated_at`) VALUES ('успешно загружен', '2020-09-18 23:27:48.501233', '2020-09-18 23:27:48.501233')[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfPayment Create (0.3ms)[0m  [1m[32mINSERT INTO `type_of_payments` (`name`, `created_at`, `updated_at`) VALUES ('предварительная оплата', '2020-09-18 23:27:48.522425', '2020-09-18 23:27:48.522425')[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.3ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор поставки', '2020-09-18 23:27:48.538083', '2020-09-18 23:27:48.538083')[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор купли-продажи', '2020-09-18 23:27:48.550188', '2020-09-18 23:27:48.550188')[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.3ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор об оказании услуг', '2020-09-18 23:27:48.564864', '2020-09-18 23:27:48.564864')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор розничной купли-продажи', '2020-09-18 23:27:48.577677', '2020-09-18 23:27:48.577677')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор складского хранения', '2020-09-18 23:27:48.599819', '2020-09-18 23:27:48.599819')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.3ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор комиссии', '2020-09-18 23:27:48.612274', '2020-09-18 23:27:48.612274')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTypeOfContract Create (0.4ms)[0m  [1m[32mINSERT INTO `type_of_contracts` (`name`, `created_at`, `updated_at`) VALUES ('договор перевозки грузов', '2020-09-18 23:27:48.625165', '2020-09-18 23:27:48.625165')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.5ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Открытое Акционерное Общество', '2020-09-18 23:27:48.646892', '2020-09-18 23:27:48.646892')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.3ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Республиканское Унитарное Предприятие', '2020-09-18 23:27:48.659924', '2020-09-18 23:27:48.659924')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.3ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Частное Унитарное Предприятие', '2020-09-18 23:27:48.671926', '2020-09-18 23:27:48.671926')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.4ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Коммунальное Унитарное Предприятие', '2020-09-18 23:27:48.685876', '2020-09-18 23:27:48.685876')[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.3ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Закрытое Акционерное общество', '2020-09-18 23:27:48.698566', '2020-09-18 23:27:48.698566')[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOwnershipForm Create (0.4ms)[0m  [1m[32mINSERT INTO `ownership_forms` (`name`, `created_at`, `updated_at`) VALUES ('Общество с Ограниченной ответственностью', '2020-09-18 23:27:48.710681', '2020-09-18 23:27:48.710681')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInvoiceType Create (0.4ms)[0m  [1m[32mINSERT INTO `invoice_types` (`name`, `created_at`, `updated_at`) VALUES ('закупка', '2020-09-18 23:27:48.730351', '2020-09-18 23:27:48.730351')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mInvoiceType Create (0.3ms)[0m  [1m[32mINSERT INTO `invoice_types` (`name`, `created_at`, `updated_at`) VALUES ('возврат', '2020-09-18 23:27:48.744961', '2020-09-18 23:27:48.744961')[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PGroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:133)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPGroup Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `p_groups` WHERE `p_groups`.`name` = BINARY 'продовольственное' LIMIT 1[0m
+  [1m[36mPGroup Create (0.3ms)[0m  [1m[32mINSERT INTO `p_groups` (`name`, `created_at`, `updated_at`) VALUES ('продовольственное', '2020-09-18 23:27:48.768708', '2020-09-18 23:27:48.768708')[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PGroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:133)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPGroup Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `p_groups` WHERE `p_groups`.`name` = BINARY 'непродовольственное' LIMIT 1[0m
+  [1m[36mPGroup Create (0.4ms)[0m  [1m[32mINSERT INTO `p_groups` (`name`, `created_at`, `updated_at`) VALUES ('непродовольственное', '2020-09-18 23:27:48.783433', '2020-09-18 23:27:48.783433')[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.3ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('₽', 'российский рубль', '2020-09-18 23:27:48.811388', '2020-09-18 23:27:48.811388')[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.7ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('Br', 'белорусский рубль', '2020-09-18 23:27:48.833655', '2020-09-18 23:27:48.833655')[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.5ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('$', 'доллар США', '2020-09-18 23:27:48.857948', '2020-09-18 23:27:48.857948')[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCurrency Create (0.4ms)[0m  [1m[32mINSERT INTO `currencies` (`short_name`, `full_name`, `created_at`, `updated_at`) VALUES ('€', 'евро', '2020-09-18 23:27:48.886141', '2020-09-18 23:27:48.886141')[0m
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPGroup Load (0.7ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` WHERE `p_groups`.`name` = 'продовольственное' LIMIT 1[0m
+  [1m[36mPGroup Load (0.5ms)[0m  [1m[34mSELECT `p_groups`.* FROM `p_groups` WHERE `p_groups`.`name` = 'непродовольственное' LIMIT 1[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PSubgroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:146)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPSubgroup Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `p_subgroups` WHERE `p_subgroups`.`name` = BINARY 'молочные товары' LIMIT 1[0m
+  [1m[36mPSubgroup Create (0.3ms)[0m  [1m[32mINSERT INTO `p_subgroups` (`name`, `p_group_id`, `created_at`, `updated_at`) VALUES ('молочные товары', 1, '2020-09-18 23:27:48.948528', '2020-09-18 23:27:48.948528')[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :name attribute in PSubgroup model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from <main> at /home/akira/Desktop/new_version_college_prod/server_api_college/db/seeds.rb:146)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPSubgroup Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `p_subgroups` WHERE `p_subgroups`.`name` = BINARY 'кисло-молочные' LIMIT 1[0m
+  [1m[36mPSubgroup Create (0.4ms)[0m  [1m[32mINSERT INTO `p_subgroups` (`name`, `p_group_id`, `created_at`, `updated_at`) VALUES ('кисло-молочные', 1, '2020-09-18 23:27:48.963143', '2020-09-18 23:27:48.963143')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.3ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('л.', 'литры', 1000.0, '2020-09-18 23:27:48.982033', '2020-09-18 23:27:48.982033')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.4ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('шт.', 'штуки', 20000.0, '2020-09-18 23:27:48.994415', '2020-09-18 23:27:48.994415')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.4ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('кг', 'килограммы', 1000.0, '2020-09-18 23:27:49.008532', '2020-09-18 23:27:49.008532')[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUnit Create (0.4ms)[0m  [1m[32mINSERT INTO `units` (`short_name`, `full_name`, `gramms`, `created_at`, `updated_at`) VALUES ('г.', 'граммы', 1.0, '2020-09-18 23:27:49.021049', '2020-09-18 23:27:49.021049')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUnit Load (0.5ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`full_name` = 'литры' LIMIT 1[0m
+  [1m[36mUnit Load (0.4ms)[0m  [1m[34mSELECT `units`.* FROM `units` WHERE `units`.`full_name` = 'граммы' LIMIT 1[0m
+  [1m[36mOwnershipForm Load (0.4ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`name` = 'Общество с Ограниченной ответственностью' LIMIT 1[0m
+  [1m[36mOwnershipForm Load (0.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`name` = 'Закрытое Акционерное общество' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Create (0.3ms)[0m  [1m[32mINSERT INTO `organizations` (`short_name`, `full_name`, `unp`, `legal_address`, `is_provider`, `is_buyer`, `is_company`, `ownership_form_id`, `created_at`, `updated_at`) VALUES ('«Молочный мир»', 'OOO «Молочный мир»', '567456998', 'Независимости 35, 23', TRUE, FALSE, TRUE, 6, '2020-09-18 23:27:49.058286', '2020-09-18 23:27:49.058286')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Create (0.4ms)[0m  [1m[32mINSERT INTO `organizations` (`short_name`, `full_name`, `unp`, `legal_address`, `is_provider`, `is_buyer`, `is_company`, `ownership_form_id`, `created_at`, `updated_at`) VALUES ('«Златка»', 'ЧТУП «Златка»', '237456998', 'Якубовского 78, 93', FALSE, TRUE, TRUE, 5, '2020-09-18 23:27:49.069678', '2020-09-18 23:27:49.069678')[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCurrency Load (0.4ms)[0m  [1m[34mSELECT `currencies`.* FROM `currencies` WHERE `currencies`.`full_name` = 'доллар США' LIMIT 1[0m
+  [1m[36mTypeOfExchange Load (0.4ms)[0m  [1m[34mSELECT `type_of_exchanges`.* FROM `type_of_exchanges` WHERE `type_of_exchanges`.`name` = '' LIMIT 1[0m
+  [1m[36mTypeOfContract Load (0.4ms)[0m  [1m[34mSELECT `type_of_contracts`.* FROM `type_of_contracts` WHERE `type_of_contracts`.`name` = 'договор об оказании услуг' LIMIT 1[0m
+  [1m[36mTypeOfPayment Load (0.5ms)[0m  [1m[34mSELECT `type_of_payments`.* FROM `type_of_payments` WHERE `type_of_payments`.`name` = 'предварительная оплата' LIMIT 1[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_provider` = TRUE LIMIT 1[0m
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`is_buyer` = TRUE LIMIT 1[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`short_name` = '«Молочный мир»' LIMIT 1[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` WHERE `organizations`.`short_name` = '«Златка»' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO `warehouses` (`address`, `organization_id`, `created_at`, `updated_at`) VALUES ('Красноармейская 7а', 1, '2020-09-18 23:27:49.115927', '2020-09-18 23:27:49.115927')[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWarehouse Create (0.3ms)[0m  [1m[32mINSERT INTO `warehouses` (`address`, `organization_id`, `created_at`, `updated_at`) VALUES ('Неманская 17, 32', 2, '2020-09-18 23:27:49.126438', '2020-09-18 23:27:49.126438')[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/guides/organizations" for ::1 at 2020-09-22 11:35:30 +0300
+  [1m[35m (18.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (14.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Guides::OrganizationsController#index as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "organization"=>{}}
+  [1m[36mOrganization Load (12.3ms)[0m  [1m[34mSELECT `organizations`.* FROM `organizations` ORDER BY `organizations`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `each'
+  [1m[36mOwnershipForm Load (1.6ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mOwnershipForm Load (0.3ms)[0m  [1m[34mSELECT `ownership_forms`.* FROM `ownership_forms` WHERE `ownership_forms`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:58:in `get_method_helper'
+  [1m[36mWarehouse Load (1.8ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 1[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+  [1m[36mWarehouse Load (0.5ms)[0m  [1m[34mSELECT `warehouses`.* FROM `warehouses` WHERE `warehouses`.`organization_id` = 2[0m
+  ↳ app/controllers/guides/organizations_controller.rb:22:in `index'
+Completed 200 OK in 98ms (Views: 10.8ms | ActiveRecord: 30.2ms | Allocations: 20771)
+
+
+Started GET "/customs/act_of_discrepancies" for ::1 at 2020-09-22 13:01:19 +0300
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Customs::ActOfDiscrepanciesController#index as */*
+  Parameters: {"invoice_type_id"=>2, "contract_id"=>1, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2, "act_of_discrepancy"=>{"invoice_type_id"=>2, "operation_id"=>1, "currency_id"=>1, "provider_warehouse_id"=>1, "customer_warehouse_id"=>2}}
+  [1m[36mActOfDiscrepancy Load (8.3ms)[0m  [1m[34mSELECT `act_of_discrepancies`.* FROM `act_of_discrepancies` ORDER BY `act_of_discrepancies`.`id` ASC LIMIT 1000[0m
+  ↳ app/controllers/customs/act_of_discrepancies_controller.rb:22:in `each'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 11.9ms | Allocations: 1098)
+
+

@@ -39,7 +39,6 @@ module Warehouses
         series_and_number: params[:series_and_number],
         valid_from: params[:valid_from],
         valid_for: params[:valid_for],
-        by_default: params[:by_default],
         note: params[:note]
       }
     end
@@ -50,7 +49,6 @@ module Warehouses
         series_and_number: el.series_and_number,
         valid_from: el.valid_from,
         valid_for: el.valid_for,
-        by_default: el.by_default,
         note: el.note,
         currency: el.currency,
         type_of_contract: el.type_of_contract,
@@ -62,7 +60,7 @@ module Warehouses
     end
 
     def permit_params
-      params.require(@model.name.underscore.to_sym).permit(:series_and_number, :valid_from, :valid_for, :by_default, :note,
+      params.require(@model.name.underscore.to_sym).permit(:series_and_number, :valid_from, :valid_for, :note,
                                                            :type_of_contract_id, :type_of_exchange_id, :type_of_payment_id,
                                                            :provider_id, :customer_id, :currency_id)
     end

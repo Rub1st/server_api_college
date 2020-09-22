@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  short_name: MyString
+  code: MyString
+  price: 1.5
+  rate_nds: one
+  summa_nds: 1.5
+  cost: 1.5
+  unit: one
+  p_subgroup: one
+  act_of_discrepancy: one
+
+two:
+  full_name: MyString
+  short_name: MyString
+  code: MyString
+  price: 1.5
+  rate_nds: two
+  summa_nds: 1.5
+  cost: 1.5
+  unit: two
+  p_subgroup: two
+  act_of_discrepancy: two

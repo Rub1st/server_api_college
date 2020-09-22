@@ -33,7 +33,7 @@ module Customs
         invoice_type: InvoiceType.find(params[:invoice_type_id]),
         operation: Operation.find(params[:operation_id]),
         currency: Currency.find(params[:currency_id]),
-        contract: Contract.find(params[:contract_id]),
+        invoice: Invoice.find(params[:invoice_id]),
         provider_warehouse: Warehouse.find(params[:provider_warehouse_id]),
         customer_warehouse: Warehouse.find(params[:customer_warehouse_id]),
         is_closed: params[:is_closed],
@@ -63,7 +63,7 @@ module Customs
         invoice_type: el.invoice_type,
         operation: el.operation,
         currency: el.currency,
-        contract: el.contract,
+        invoice: el.invoice,
         provider_warehouse: el.provider_warehouse,
         customer_warehouse: el.customer_warehouse,
       } 
@@ -72,7 +72,7 @@ module Customs
     def permit_params
       params.require(@model.name.underscore.to_sym).permit(:is_closed, :is_conducted, :series_and_number, :date_and_time, :strings_count,
                                                            :total_count, :summa_nds, :summa_with_nds, :note, :invoice_type_id, :operation_id,
-                                                           :currency_id, :contract_id, :provider_warehouse_id, :customer_warehouse_id)
+                                                           :currency_id, :invoice_id, :provider_warehouse_id, :customer_warehouse_id)
     end
 
   end

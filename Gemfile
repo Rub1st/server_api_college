@@ -38,6 +38,7 @@ group :development do
   gem 'rails-erd'
   gem 'rubocop-rails', require: false
   gem 'rack-cors'
+  gem 'rubocop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

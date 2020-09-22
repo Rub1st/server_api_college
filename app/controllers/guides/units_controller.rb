@@ -35,11 +35,12 @@ module Guides
         id: el.id,
         short_name: el.short_name,
         full_name: el.full_name,
+        gramms: el.gramms
       } 
     end
 
     def permit_params
-      params.require(@model.name.underscore.to_sym).permit(:short_name,:full_name)
+      params.require(@model.name.underscore.to_sym).permit(:short_name,:full_name, :gramms)
     end
 
   end

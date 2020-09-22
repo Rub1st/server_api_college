@@ -14,7 +14,7 @@ InvoiceType.destroy_all
 Operation.destroy_all
 Agreement.destroy_all
 Contract.destroy_all
-Product.destroy_all
+#Product.destroy_all
 PSubgroup.destroy_all
 PGroup.destroy_all
 Unit.destroy_all
@@ -147,19 +147,19 @@ PSubgroup.create([{ p_group: food, name: 'молочные товары' },
                   { p_group: food, name: 'кисло-молочные' }])
 
 # создание единиц измерения
-Unit.create([{ short_name: 'л.', full_name: variables[:litres] },
-             { short_name: 'шт.', full_name: variables[:items] },
-             { short_name: 'кг', full_name: variables[:kilos] },
-             { short_name: 'г.', full_name: variables[:gramms] }])
+Unit.create([{ short_name: 'л.', full_name: variables[:litres], gramms: 1000 },
+             { short_name: 'шт.', full_name: variables[:items], gramms: 20000 },
+             { short_name: 'кг', full_name: variables[:kilos], gramms: 1000 },
+             { short_name: 'г.', full_name: variables[:gramms], gramms: 1 }])
 
 # запросы на названия единиц измерения
 f_liters = Unit.find_by(full_name: variables[:litres])
 f_gramms = Unit.find_by(full_name: variables[:gramms])
 
 # создание продуктов
-Product.create([{ short_name: 'Молоко «Любимое»', full_name: 'Молоко «Любимое» 1,5%', unit: f_liters },
-                { short_name: 'Кефир «Деревенский»', full_name: 'Кефир «Деревенский» 2,5%', unit: f_liters },
-                { short_name: 'Сметана «Вкусная» 25%', full_name: 'Сметана «Вкусная» 25%', unit: f_gramms }])
+# Product.create([{ short_name: 'Молоко «Любимое»', full_name: 'Молоко «Любимое» 1,5%', unit: f_liters },
+#                 { short_name: 'Кефир «Деревенский»', full_name: 'Кефир «Деревенский» 2,5%', unit: f_liters },
+#                 { short_name: 'Сметана «Вкусная» 25%', full_name: 'Сметана «Вкусная» 25%', unit: f_gramms }])
 
 # создание организаций
 Organization.create([{ ownership_form: OwnershipForm.find_by(name: variables[:ooo]), short_name: '«Молочный мир»', full_name: 'OOO «Молочный мир»', unp: '567456998', legal_address: 'Независимости 35, 23', is_provider: true, is_buyer: false, is_company: true},
@@ -179,29 +179,19 @@ Warehouse.create([{address: 'Красноармейская 7а', organization: 
                   {address: 'Неманская 17, 32', organization: Organization.find_by(short_name: '«Златка»')}])
 
 #создание накладной
-Invoice.create(invoice_type: InvoiceType.find_by(name: variables[:invoice_type1]),
-               operation: Operation.find_by(name: variables[:operation1]),
-               currency: Currency.find_by(full_name: variables[:usa_dollar]),
-               contract: Contract.find_by(series_and_number: '123456789'),
-               agreement: Agreement.find_by(name: variables[:agreement1]),
-               status_of_price_tag_printing: StatusOfPriceTagPrinting.find_by(name: variables[:status_of_price_tag_printing1]),
-               status_of_acceptance: StatusOfAcceptance.find_by(name: variables[:status_of_acceptance1]),
-               status_of_booting_in_equipment: StatusOfBootingInEquipment.find_by(name: variables[:status_of_booting_in_equipment1]))
+# Invoice.create(invoice_type: InvoiceType.find_by(name: variables[:invoice_type1]),
+#                operation: Operation.find_by(name: variables[:operation1]),
+#                currency: Currency.find_by(full_name: variables[:usa_dollar]),
+#                contract: Contract.find_by(series_and_number: '123456789'),
+#                agreement: Agreement.find_by(name: variables[:agreement1]),
+#                status_of_price_tag_printing: StatusOfPriceTagPrinting.find_by(name: variables[:status_of_price_tag_printing1]),
+#                status_of_acceptance: StatusOfAcceptance.find_by(name: variables[:status_of_acceptance1]),
+#                status_of_booting_in_equipment: StatusOfBootingInEquipment.find_by(name: variables[:status_of_booting_in_equipment1]))
 
 # создание актов расхождений
-ActOfDiscrepancy.create(invoice_type: InvoiceType.find_by(name: variables[:invoice_type1]),
-                          operation: Operation.find_by(name: variables[:operation1]),
-                          currency: Currency.find_by(full_name: variables[:usa_dollar]),
-                          contract: Contract.find_by(series_and_number: '123456789'),
-                          provider_warehouse: Warehouse.find_by(organization: Organization.find_by(short_name: '«Молочный мир»')),
-                          customer_warehouse: Warehouse.find_by(organization: Organization.find_by(short_name: '«Златка»')))
-
-# добавление в b_subgroups_products
-Product.find_by_short_name('Молоко «Любимое»')
-       .p_subgroups << [PSubgroup.find_by(p_group: food, name: 'молочные товары'),
-                        PSubgroup.find_by(p_group: food, name: 'кисло-молочные')]
-
-# добавление в contracts_products
-# Contract.find_by(series_and_number: '123456789')
-#        .products << [Product.find_by(short_name: 'Молоко «Любимое»', full_name: 'Молоко «Любимое» 1,5%'),
-#                      Product.find_by(short_name: 'Кефир «Деревенский»', full_name: 'Кефир «Деревенский» 2,5%')]
+# ActOfDiscrepancy.create(invoice_type: InvoiceType.find_by(name: variables[:invoice_type1]),
+#                           operation: Operation.find_by(name: variables[:operation1]),
+#                           currency: Currency.find_by(full_name: variables[:usa_dollar]),
+#                           contract: Contract.find_by(series_and_number: '123456789'),
+#                           provider_warehouse: Warehouse.find_by(organization: Organization.find_by(short_name: '«Молочный мир»')),
+#                           customer_warehouse: Warehouse.find_by(organization: Organization.find_by(short_name: '«Златка»')))

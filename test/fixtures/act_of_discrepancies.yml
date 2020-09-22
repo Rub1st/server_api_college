@@ -4,7 +4,7 @@ one:
   is_closed: false
   is_conducted: false
   series_and_number: MyString
-  date_and_time: 2020-08-23 16:20:54
+  date_and_time: 2020-09-19 00:42:41
   strings_count: 1
   total_count: 1
   summa_nds: 1.5
@@ -13,13 +13,13 @@ one:
   invoice_type: one
   operation: one
   currency: one
-  contract: one
+  invoice: one
 
 two:
   is_closed: false
   is_conducted: false
   series_and_number: MyString
-  date_and_time: 2020-08-23 16:20:54
+  date_and_time: 2020-09-19 00:42:41
   strings_count: 1
   total_count: 1
   summa_nds: 1.5
@@ -28,4 +28,4 @@ two:
   invoice_type: two
   operation: two
   currency: two
-  contract: two
+  invoice: two

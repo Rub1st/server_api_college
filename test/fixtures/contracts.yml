@@ -2,9 +2,8 @@
 
 one:
   series_and_number: MyString
-  valid_from: 2020-08-23
-  valid_for: 2020-08-23
-  by_default: false
+  valid_from: 2020-09-19
+  valid_for: 2020-09-19
   note: MyText
   currency: one
   type_of_exchange: one
@@ -13,9 +12,8 @@ one:
 
 two:
   series_and_number: MyString
-  valid_from: 2020-08-23
-  valid_for: 2020-08-23
-  by_default: false
+  valid_from: 2020-09-19
+  valid_for: 2020-09-19
   note: MyText
   currency: two
   type_of_exchange: two
