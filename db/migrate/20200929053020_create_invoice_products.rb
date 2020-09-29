@@ -5,7 +5,7 @@ class CreateInvoiceProducts < ActiveRecord::Migration[6.0]
       t.string :short_name
       t.string :code
       t.float :price
-      t.references :rate_nds, null: false, foreign_key: true
+      t.references :rate_vat, null: false, foreign_key: true
       t.float :summa_nds
       t.float :cost
       t.references :unit, null: false, foreign_key: true

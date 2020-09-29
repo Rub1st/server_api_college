@@ -33,7 +33,7 @@ module Guides
         full_name: params[:full_name],
         code: params[:code],
         price: params[:price],
-        rate_nds: RateNds.find(params[:rate_nds_id]),
+        rate_vat: RateNd.find(params[:rate_vat_id]),
         summa_nds: params[:summa_nds],
         cost: params[:cost],
         unit: Unit.find(params[:unit_id]),
@@ -49,18 +49,18 @@ module Guides
         full_name: el.full_name,
         code: el.code,
         price: el.price,
-        rate_nds: el.rate_nds,
+        rate_vat: el.rate_vat,
         summa_nds: el.summa_nds,
         cost: el.cost,
         unit: el.unit,
         p_subgroup: el.p_subgroup,
         invoice: el.act_of_discrepancy
-      } 
+      }
     end
 
     def permit_params
       params.require(@model.name.underscore.to_sym)
-      .permit(:short_name, :full_name, :code, :price, :rate_nds_id, :summa_nds,
+      .permit(:short_name, :full_name, :code, :price, :rate_vat_id, :summa_nds,
               :cost, :unit_id, :p_subgroup_id, :invoice_id)
     end
   end

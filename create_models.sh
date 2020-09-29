@@ -11,7 +11,7 @@
 # rails generate model TypeOfExchange name:string --force
 # rails generate model TypeOfPayment name:string --force
 # rails generate model TypeOfContract name:string --force
-# rails generate model RateNds rate:integer --force 
+# rails generate model RateVAT rate:integer --force
 # rails g model OwnershipForm name:string --force
 
 # rails g model PGroup name:string --force
@@ -26,9 +26,9 @@
 
 # rails g model ActOfDiscrepancy is_closed:boolean is_conducted:boolean series_and_number:string date_and_time:datetime strings_count:integer total_count:integer summa_nds:float summa_with_nds:float note:string invoice_type:references operation:references currency:references invoice:references --force
 
-# rails generate model InvoiceProduct full_name:string short_name:string code:string price:float rate_nds:references summa_nds:float cost:float unit:references p_subgroup:references invoice:references --force
+# rails generate model InvoiceProduct full_name:string short_name:string code:string price:float rate_vat:references summa_nds:float cost:float unit:references p_subgroup:references invoice:references --force
 
-# rails generate model ActOfDiscrepanciesProduct full_name:string short_name:string code:string price:float rate_nds:references summa_nds:float cost:float unit:references p_subgroup:references act_of_discrepancy:references --force
+rails generate model ActOfDiscrepanciesProduct invoice_product:references act_of_discrepancy:references --force
 
 
 
@@ -52,9 +52,9 @@
 # rails g controller TypeOfPaymentsController new create update edit destroy index show
 # rails g controller UnitsController new create update edit destroy index show
 # rails g controller WarehousesController new create update edit destroy index show
-rails g controller RateNdsesController create update destroy index show
-rails g controller ActOfDiscrepanciesProductsController create update destroy index show
-rails g controller InvoiceProductsController create update destroy index show
+# rails g controller RateVatsController create update destroy index show
+# rails g controller ActOfDiscrepanciesProductsController create update destroy index show
+# rails g controller InvoiceProductsController create update destroy index show
 
 
 

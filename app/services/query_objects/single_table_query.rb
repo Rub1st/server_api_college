@@ -11,14 +11,14 @@ class SingleTableQuery
         end
     end
 
-    def update (model, data_params,id)
-        d = model.find(id)
-        if d.update_attributes(data_params)
-            {json: d, status: :ok}
-        else
-            {json: {errors: d.errors}, status: :unprocessable_entity}
-        end
-    end
+	def update (model, data_params,id)
+  	d = model.find(id)
+      if d.update_attributes(data_params)
+          {json: d, status: :ok}
+      else
+          { json: { errors: d.errors }, status: :unprocessable_entity }
+      end
+  end
 
     def destroy (model, id)
         d = model.find(id)

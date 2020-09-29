@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_214608) do
+ActiveRecord::Schema.define(version: 2020_09_29_053411) do
 
   create_table "act_of_discrepancies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.boolean "is_closed"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_214608) do
     t.string "short_name"
     t.string "code"
     t.float "price"
-    t.bigint "rate_nds_id", null: false
+    t.bigint "rate_vat_id", null: false
     t.float "summa_nds"
     t.float "cost"
     t.bigint "unit_id", null: false
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_214608) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["invoice_id"], name: "index_invoice_products_on_invoice_id"
     t.index ["p_subgroup_id"], name: "index_invoice_products_on_p_subgroup_id"
-    t.index ["rate_nds_id"], name: "index_invoice_products_on_rate_nds_id"
+    t.index ["rate_vat_id"], name: "index_invoice_products_on_rate_vat_id"
     t.index ["unit_id"], name: "index_invoice_products_on_unit_id"
   end
 
@@ -186,7 +186,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_214608) do
     t.index ["p_group_id"], name: "index_p_subgroups_on_p_group_id"
   end
 
-  create_table "rate_nds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "rate_vats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -260,7 +260,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_214608) do
   add_foreign_key "contracts", "type_of_payments"
   add_foreign_key "invoice_products", "invoices"
   add_foreign_key "invoice_products", "p_subgroups"
-  add_foreign_key "invoice_products", "rate_nds", column: "rate_nds_id"
+  add_foreign_key "invoice_products", "rate_vats"
   add_foreign_key "invoice_products", "units"
   add_foreign_key "invoices", "agreements"
   add_foreign_key "invoices", "contracts"

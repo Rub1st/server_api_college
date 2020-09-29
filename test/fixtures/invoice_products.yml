@@ -5,7 +5,7 @@ one:
   short_name: MyString
   code: MyString
   price: 1.5
-  rate_nds: one
+  rate_vat: one
   summa_nds: 1.5
   cost: 1.5
   unit: one
@@ -17,7 +17,7 @@ two:
   short_name: MyString
   code: MyString
   price: 1.5
-  rate_nds: two
+  rate_vat: two
   summa_nds: 1.5
   cost: 1.5
   unit: two
