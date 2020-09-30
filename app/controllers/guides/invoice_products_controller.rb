@@ -33,7 +33,7 @@ module Guides
         full_name: params[:full_name],
         code: params[:code],
         price: params[:price],
-        rate_vat: RateNd.find(params[:rate_vat_id]),
+        rate_vat: RateVat.find(params[:rate_vat_id]),
         summa_nds: params[:summa_nds],
         cost: params[:cost],
         unit: Unit.find(params[:unit_id]),
@@ -54,7 +54,7 @@ module Guides
         cost: el.cost,
         unit: el.unit,
         p_subgroup: el.p_subgroup,
-        invoice: el.act_of_discrepancy
+        invoice: el.invoice
       }
     end
 

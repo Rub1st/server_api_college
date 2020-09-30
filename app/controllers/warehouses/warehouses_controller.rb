@@ -39,6 +39,5 @@ module Warehouses
     def permit_params
       params.require(@model.name.underscore.to_sym).permit(:address, :organization_id)
     end
-
   end
 end

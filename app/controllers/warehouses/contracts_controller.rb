@@ -1,6 +1,6 @@
 module Warehouses
   class ContractsController < ApplicationController
-    
+
     def initialize
       @single_table_query = SingleTableQuery.new
       @model = Contract
@@ -28,7 +28,7 @@ module Warehouses
 
     private
 
-    def post_method_helper (props)
+    def post_method_helper (params)
       {
         currency: Currency.find(params[:currency_id]),
         type_of_exchange: TypeOfExchange.find(params[:type_of_exchange_id]),
@@ -55,8 +55,8 @@ module Warehouses
         type_of_exchange: el.type_of_exchange,
         type_of_payment: el.type_of_payment,
         provider: el.provider,
-        customer: el.customer,
-      } 
+        customer: el.customer
+      }
     end
 
     def permit_params
