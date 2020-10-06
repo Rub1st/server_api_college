@@ -28,6 +28,21 @@ module Customs
 
     private
 
+    def contract_parser (contract)
+      {
+        series_and_number: contract.series_and_number,
+        valid_for: contract.valid_for,
+        valid_from: contract.valid_from,
+        note: contract.note,
+        currency: Currency.find(contract.currency_id),
+        type_of_exchange: TypeOfExchange.find(contract.type_of_exchange_id),
+        type_of_payment: TypeOfPayment.find(contract.type_of_payment_id),
+        type_of_contract: TypeOfContract.find(contract.type_of_contract_id),
+        provider: Organization.find(contract.provider_id),
+        customer: Organization.find(contract.customer_id)
+      }
+    end
+
     def post_method_helper (params)
       {
         invoice_type: InvoiceType.find(params[:invoice_type_id]),
@@ -77,12 +92,12 @@ module Customs
         invoice_type: el.invoice_type,
         operation: el.operation,
         currency: el.currency,
-        contract: el.contract,
+        contract: contract_parser(el.contract),
         agreement: el.agreement,
         status_of_price_tag_printing: el.status_of_price_tag_printing,
         status_of_acceptance: el.status_of_acceptance,
-        status_of_booting_in_equipment: el.status_of_booting_in_equipment,
-      } 
+        status_of_booting_in_equipment: el.status_of_booting_in_equipment
+      }
     end
 
     def permit_params

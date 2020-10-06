@@ -1,6 +1,6 @@
 module Customs
   class ActOfDiscrepanciesController < ApplicationController
-    
+
     def initialize
       @single_table_query = SingleTableQuery.new
       @model = ActOfDiscrepancy
@@ -27,6 +27,34 @@ module Customs
     end
 
     private
+
+    def invoice_parser (invoice)
+      {
+        series_and_number: invoice.series_and_number,
+        note: invoice.note,
+        is_closed: invoice.is_closed,
+        is_conducted: invoice.is_conducted,
+        date_and_time: invoice.date_and_time,
+        selling_on_commission: invoice.selling_on_commission,
+        strings_count: invoice.strings_count,
+        total_count: invoice.total_count,
+        summa: invoice.summa,
+        summa_nds: invoice.summa_nds,
+        summa_with_nds: invoice.summa_with_nds,
+        record_summa: invoice.record_summa,
+        retail_summa: invoice.retail_summa,
+        pre_assessment_summa: invoice.pre_assessment_summa,
+        write_down_summa: invoice.write_down_summa,
+        invoice_type: InvoiceType.find(invoice.invoice_type_id),
+        operation: Operation.find(invoice.operation_id),
+        contract: Contract.find(invoice.contract_id),
+        agreement: Agreement.find(invoice.agreement_id),
+        currency: Currency.find(invoice.currency_id),
+        status_of_acceptance: StatusOfAcceptance.find(invoice.status_of_acceptance_id),
+        status_of_booting_in_equipment: StatusOfBootingInEquipment.find(invoice.status_of_booting_in_equipment_id),
+        status_of_price_tag_printing: StatusOfPriceTagPrinting.find(invoice.status_of_price_tag_printing_id)
+      }
+    end
 
     def post_method_helper (params)
       {
@@ -63,10 +91,10 @@ module Customs
         invoice_type: el.invoice_type,
         operation: el.operation,
         currency: el.currency,
-        invoice: el.invoice,
+        invoice: invoice_parser(el.invoice),
         provider_warehouse: el.provider_warehouse,
-        customer_warehouse: el.customer_warehouse,
-      } 
+        customer_warehouse: el.customer_warehouse
+      }
     end
 
     def permit_params
