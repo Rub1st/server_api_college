@@ -1,4 +1,4 @@
 class StatusOfBootingInEquipment < ApplicationRecord
-    has_many :invoices, :dependent => :delete_all
+    has_many :invoices, dependent: :destroy
     validates :name, presence: true
 end

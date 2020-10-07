@@ -28,7 +28,7 @@
 
 # rails generate model InvoiceProduct full_name:string short_name:string code:string price:float rate_vat:references summa_nds:float cost:float unit:references p_subgroup:references invoice:references --force
 
-rails generate model ActOfDiscrepanciesProduct invoice_product:references act_of_discrepancy:references --force
+rails generate model ActOfDiscrepanciesProduct code:string invoice_product:references act_of_discrepancy:references --force
 
 
 

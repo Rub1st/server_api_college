@@ -1,4 +1,4 @@
 class TypeOfPayment < ApplicationRecord
-    has_many :contracts, :dependent => :delete_all
+    has_many :contracts, dependent: :destroy
     validates :name, presence: true
 end

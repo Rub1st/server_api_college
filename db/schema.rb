@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_053411) do
+ActiveRecord::Schema.define(version: 2020_10_07_100831) do
 
   create_table "act_of_discrepancies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.boolean "is_closed"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_053411) do
   end
 
   create_table "act_of_discrepancies_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "code"
     t.bigint "invoice_product_id", null: false
     t.bigint "act_of_discrepancy_id", null: false
     t.datetime "created_at", precision: 6, null: false

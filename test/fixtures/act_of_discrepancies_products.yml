@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  code: MyString
   invoice_product: one
   act_of_discrepancy: one
 
 two:
+  code: MyString
   invoice_product: two
   act_of_discrepancy: two

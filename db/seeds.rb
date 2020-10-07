@@ -278,6 +278,7 @@ InvoiceProduct.create(
 
 # creating act of discrepancies products
 ActOfDiscrepanciesProduct.create(
+  code: '353678334',
   invoice_product: InvoiceProduct.find_by(code: '234654234'),
   act_of_discrepancy: ActOfDiscrepancy.find_by(series_and_number: '123436342')
 )

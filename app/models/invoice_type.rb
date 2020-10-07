@@ -1,5 +1,5 @@
 class InvoiceType < ApplicationRecord
-    has_many :invoices, :dependent => :delete_all
-    has_many :act_of_discrepancies, :dependent => :delete_all
+    has_many :invoices, dependent: :destroy
+    has_many :act_of_discrepancies, dependent: :destroy
     validates :name, presence: true
 end

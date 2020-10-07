@@ -7,5 +7,6 @@ class Invoice < ApplicationRecord
   belongs_to :status_of_price_tag_printing
   belongs_to :status_of_acceptance
   belongs_to :status_of_booting_in_equipment
-  has_many :invoice_products
+  has_many :invoice_products, dependent: :destroy
+  has_many :act_of_discrepancies, dependent: :destroy
 end
