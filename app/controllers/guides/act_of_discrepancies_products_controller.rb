@@ -52,6 +52,7 @@ module Guides
 
     def get_method_helper (el)
       {
+        id: el.id,
         code: el.code,
         invoice_product: invoice_product_parser(el.invoice_product),
         act_of_discrepancy: el.act_of_discrepancy
