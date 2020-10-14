@@ -9,4 +9,16 @@ class Invoice < ApplicationRecord
   belongs_to :status_of_booting_in_equipment
   has_many :invoice_products, dependent: :destroy
   has_many :act_of_discrepancies, dependent: :destroy
+  validates :series_and_number,
+            :date_and_time,
+            :summa,
+            :summa_nds,
+            :summa_with_nds,
+            :record_summa,
+            :retail_summa,
+            :pre_assessment_summa,
+            :write_down_summa,
+            :strings_count,
+            :total_count,
+            presence: { message: "Поле не может быть пустым" }
 end

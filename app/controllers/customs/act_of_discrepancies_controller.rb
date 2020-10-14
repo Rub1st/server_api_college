@@ -30,6 +30,7 @@ module Customs
 
     def invoice_parser (invoice)
       {
+        id: invoice.id,
         series_and_number: invoice.series_and_number,
         note: invoice.note,
         is_closed: invoice.is_closed,

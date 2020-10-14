@@ -1,5 +1,5 @@
 class Operation < ApplicationRecord
     has_many :invoices, dependent: :destroy
     has_many :act_of_discrepancies, dependent: :destroy
-    validates :name, presence: true
+    validates :name, presence: { message: "Поле не может быть пустым" }
 end

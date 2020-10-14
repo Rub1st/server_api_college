@@ -30,6 +30,7 @@ module Customs
 
     def contract_parser (contract)
       {
+        id: contract.id,
         series_and_number: contract.series_and_number,
         valid_for: contract.valid_for,
         valid_from: contract.valid_from,

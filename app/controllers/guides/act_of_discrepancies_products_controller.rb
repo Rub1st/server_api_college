@@ -29,6 +29,7 @@ module Guides
 
     def invoice_product_parser(params)
       {
+        id: params[:id],
         short_name: params[:short_name],
         full_name: params[:full_name],
         code: params[:code],
