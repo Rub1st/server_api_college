@@ -10,7 +10,6 @@ class Invoice < ApplicationRecord
   has_many :invoice_products, dependent: :destroy
   has_many :act_of_discrepancies, dependent: :destroy
   validates :series_and_number,
-            :date_and_time,
             :summa,
             :summa_nds,
             :summa_with_nds,

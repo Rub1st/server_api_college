@@ -2,7 +2,7 @@ class SingleTableQuery
 
     def create (model, data_params)
         data = model.new(data_params)
-        p data_params
+
         if data.save
             d = model.find(data.id)
             {json: d, status: 201}

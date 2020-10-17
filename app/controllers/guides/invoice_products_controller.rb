@@ -59,8 +59,7 @@ module Guides
     end
 
     def permit_params
-      params.require(@model.name.underscore.to_sym)
-      .permit(:short_name, :full_name, :code, :price, :rate_vat_id, :summa_nds,
+      params.require(@model.name.underscore.to_sym).permit(:short_name, :full_name, :code, :price, :rate_vat_id, :summa_nds,
               :cost, :unit_id, :p_subgroup_id, :invoice_id)
     end
   end
