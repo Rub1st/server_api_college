@@ -7,7 +7,6 @@ class ActOfDiscrepancy < ApplicationRecord
   belongs_to :customer_warehouse, class_name: 'Warehouse'
   has_many :act_of_discrepancies_products, dependent: :destroy
   validates :series_and_number,
-            :date_and_time,
             :summa_nds,
             :summa_with_nds,
             :strings_count,
