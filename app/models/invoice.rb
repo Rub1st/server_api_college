@@ -19,5 +19,5 @@ class Invoice < ApplicationRecord
             :write_down_summa,
             :strings_count,
             :total_count,
-            presence: { message: "Поле не может быть пустым" }
+            presence: { message: 'Поля: серия/номер, сумма, сумма НДС, сумма с НДС, сумма (учетная), сумма розничная, сумма дооценки, сумма списания, кол-во строк и кол-во всего являются обязательными к заполнению.' }
 end

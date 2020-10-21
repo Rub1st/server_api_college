@@ -11,5 +11,9 @@ class ActOfDiscrepancy < ApplicationRecord
             :summa_with_nds,
             :strings_count,
             :total_count,
-            presence: { message: "Поле не может быть пустым" }
+            :operation,
+            :currency,
+            :provider_warehouse,
+            :customer_warehouse,
+            presence: { message: 'Поля: серия/номер, сумма НДС, сумма с НДС, кол-во строк, кол-во всего, ТТН, операция, склад поставщика и склад покупателя являются обязательными к заполнению.' }
 end

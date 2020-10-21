@@ -7,7 +7,7 @@ class SingleTableQuery
             d = model.find(data.id)
             {json: d, status: 201}
         else
-            {json: {errors: data.errors}, status: :unprocessable_entity}
+            {json: {errors: [*data.errors]}, status: :unprocessable_entity}
         end
     end
 
