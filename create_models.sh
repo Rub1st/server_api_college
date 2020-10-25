@@ -28,9 +28,9 @@
 
 # rails generate model InvoiceProduct full_name:string short_name:string code:string price:float rate_vat:references summa_nds:float cost:float unit:references p_subgroup:references invoice:references --force
 
-rails generate model ActOfDiscrepanciesProduct code:string invoice_product:references act_of_discrepancy:references --force
+# rails generate model ActOfDiscrepanciesProduct code:string invoice_product:references act_of_discrepancy:references --force
 
-
+# rails generate model Costs invoice_product:references wholesale_percent:float wholesale_value:float commercial_percent:float commercial_value:float nds_percent:float nds_value:float retail_price:float cost:float --force
 
 # rails g controller ActOfDiscrepanciesController new create update edit destroy index show
 # rails g controller guides/AgreementsController new create update edit destroy index show
@@ -55,6 +55,7 @@ rails generate model ActOfDiscrepanciesProduct code:string invoice_product:refer
 # rails g controller RateVatsController create update destroy index show
 # rails g controller ActOfDiscrepanciesProductsController create update destroy index show
 # rails g controller InvoiceProductsController create update destroy index show
+rails g controller CostsController create update destroy index show
 
 
 

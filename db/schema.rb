@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_07_100831) do
+ActiveRecord::Schema.define(version: 2020_10_25_201124) do
 
   create_table "act_of_discrepancies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.boolean "is_closed"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2020_10_07_100831) do
 
   create_table "act_of_discrepancies_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "code"
+    t.integer "count"
+    t.float "cost"
     t.bigint "invoice_product_id", null: false
     t.bigint "act_of_discrepancy_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -75,6 +77,21 @@ ActiveRecord::Schema.define(version: 2020_10_07_100831) do
     t.index ["type_of_payment_id"], name: "index_contracts_on_type_of_payment_id"
   end
 
+  create_table "costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "invoice_product_id", null: false
+    t.float "wholesale_percent"
+    t.float "wholesale_value"
+    t.float "commercial_percent"
+    t.float "commercial_value"
+    t.float "nds_percent"
+    t.float "nds_value"
+    t.float "retail_price"
+    t.float "cost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invoice_product_id"], name: "index_costs_on_invoice_product_id"
+  end
+
   create_table "currencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "short_name"
     t.string "full_name"
@@ -86,6 +103,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_100831) do
     t.string "full_name"
     t.string "short_name"
     t.string "code"
+    t.integer "count", default: 0
     t.float "price"
     t.bigint "rate_vat_id", null: false
     t.float "summa_nds"
@@ -111,7 +129,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_100831) do
     t.boolean "is_closed"
     t.boolean "is_conducted"
     t.string "series_and_number"
-    t.datetime "date_and_time"
+    t.date "date_and_time"
     t.boolean "selling_on_commission"
     t.integer "strings_count"
     t.integer "total_count"
@@ -259,6 +277,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_100831) do
   add_foreign_key "contracts", "type_of_contracts"
   add_foreign_key "contracts", "type_of_exchanges"
   add_foreign_key "contracts", "type_of_payments"
+  add_foreign_key "costs", "invoice_products"
   add_foreign_key "invoice_products", "invoices"
   add_foreign_key "invoice_products", "p_subgroups"
   add_foreign_key "invoice_products", "rate_vats"

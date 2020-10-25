@@ -4,7 +4,7 @@ class CreateInvoices < ActiveRecord::Migration[6.0]
       t.boolean :is_closed
       t.boolean :is_conducted
       t.string :series_and_number
-      t.datetime :date_and_time
+      t.date :date_and_time
       t.boolean :selling_on_commission
       t.integer :strings_count
       t.integer :total_count

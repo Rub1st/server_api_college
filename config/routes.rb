@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   $utils = ['invoice_types']
   $routes = [ 'new', 'create', 'update', 'edit', 'destroy', 'index', 'show']
-  $guides = ['invoice_products','act_of_discrepancies_products','rate_vats','units', 'p_subgroups', 'p_groups', 'organizations', 'products', 'currencies', 'ownership_forms']
+  $guides = ['invoice_products','costs','act_of_discrepancies_products','rate_vats','units', 'p_subgroups', 'p_groups', 'organizations', 'products', 'currencies', 'ownership_forms']
   $customs = ['act_of_discrepancies', 'invoices', 'operations', 'agreements', 'status_of_price_tag_printings', 'status_of_booting_in_equipments', 'status_of_acceptances']
   $warehouses = ['warehouses', 'contracts', 'type_of_payments', 'type_of_exchanges', 'type_of_contracts']
 

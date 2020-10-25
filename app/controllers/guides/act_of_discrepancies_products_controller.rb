@@ -44,10 +44,13 @@ module Guides
     end
 
     def post_method_helper (params)
+      invoice_product = InvoiceProduct.find(params[:invoice_product_id])
       {
         code: params[:code],
-        invoice_product: InvoiceProduct.find(params[:invoice_product_id]),
-        act_of_discrepancy: ActOfDiscrepancy.find(params[:act_of_discrepancy_id])
+        invoice_product: invoice_product,
+        act_of_discrepancy: ActOfDiscrepancy.find(params[:act_of_discrepancy_id]),
+        count: params[:count],
+        cost: params[:count].to_f * invoice_product[:price]
       }
     end
 
@@ -56,13 +59,15 @@ module Guides
         id: el.id,
         code: el.code,
         invoice_product: invoice_product_parser(el.invoice_product),
-        act_of_discrepancy: el.act_of_discrepancy
+        act_of_discrepancy: el.act_of_discrepancy,
+        count: el.count,
+        cost: el.cost
       }
     end
 
     def permit_params
       params.require(@model.name.underscore.to_sym)
-      .permit(:invoice_product_id, :act_of_discrepancy_id, :code)
+      .permit(:invoice_product_id, :act_of_discrepancy_id, :code, :count)
     end
   end
 end

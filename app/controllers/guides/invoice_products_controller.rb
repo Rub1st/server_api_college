@@ -28,17 +28,19 @@ module Guides
     private
 
     def post_method_helper (params)
+      this_invoice = Invoice.find(params[:invoice_id])
       {
         short_name: params[:short_name],
         full_name: params[:full_name],
         code: params[:code],
+        count: params[:count],
         price: params[:price],
         rate_vat: RateVat.find(params[:rate_vat_id]),
         summa_nds: params[:summa_nds],
         cost: params[:cost],
         unit: Unit.find(params[:unit_id]),
         p_subgroup: PSubgroup.find(params[:p_subgroup_id]),
-        invoice: Invoice.find(params[:invoice_id])
+        invoice: this_invoice
       }
     end
 
@@ -48,19 +50,21 @@ module Guides
         short_name: el.short_name,
         full_name: el.full_name,
         code: el.code,
+        count: el.count,
         price: el.price,
         rate_vat: el.rate_vat,
         summa_nds: el.summa_nds,
         cost: el.cost,
         unit: el.unit,
         p_subgroup: el.p_subgroup,
-        invoice: el.invoice
+        invoice: el.invoice,
+        invoice_date: el.invoice.date_and_time
       }
     end
 
     def permit_params
       params.require(@model.name.underscore.to_sym).permit(:short_name, :full_name, :code, :price, :rate_vat_id, :summa_nds,
-              :cost, :unit_id, :p_subgroup_id, :invoice_id)
+              :cost, :unit_id, :p_subgroup_id, :invoice_id, :count)
     end
   end
 end

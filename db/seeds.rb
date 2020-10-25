@@ -267,6 +267,7 @@ InvoiceProduct.create(
   full_name: 'Обезжиренное молоко Савушкин продукт 0.5%',
   short_name: 'молоко Савушкин продукт',
   code: '234654234',
+  count: 140,
   price: 3.20,
   rate_vat: RateVat.find_by(rate: 10),
   summa_nds: 0.75,
@@ -280,5 +281,7 @@ InvoiceProduct.create(
 ActOfDiscrepanciesProduct.create(
   code: '353678334',
   invoice_product: InvoiceProduct.find_by(code: '234654234'),
-  act_of_discrepancy: ActOfDiscrepancy.find_by(series_and_number: '123436342')
+  act_of_discrepancy: ActOfDiscrepancy.find_by(series_and_number: '123436342'),
+  count: 10,
+  cost: 10 * 3.20
 )
