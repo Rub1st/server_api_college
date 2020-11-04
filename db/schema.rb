@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 2020_10_25_201124) do
     t.bigint "rate_vat_id", null: false
     t.float "summa_nds"
     t.float "cost"
+    t.float "cost_with_nds"
     t.bigint "unit_id", null: false
     t.bigint "p_subgroup_id", null: false
     t.bigint "invoice_id", null: false

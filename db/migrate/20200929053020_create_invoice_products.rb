@@ -9,6 +9,7 @@ class CreateInvoiceProducts < ActiveRecord::Migration[6.0]
       t.references :rate_vat, null: false, foreign_key: true
       t.float :summa_nds
       t.float :cost
+      t.float :cost_with_nds
       t.references :unit, null: false, foreign_key: true
       t.references :p_subgroup, null: false, foreign_key: true
       t.references :invoice, null: false, foreign_key: true

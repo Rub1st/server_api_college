@@ -28,6 +28,22 @@ module Customs
 
     private
 
+    def contract_parser (contract)
+      {
+        id: contract.id,
+        series_and_number: contract.series_and_number,
+        valid_for: contract.valid_for,
+        valid_from: contract.valid_from,
+        note: contract.note,
+        currency: Currency.find(contract.currency_id),
+        type_of_exchange: TypeOfExchange.find(contract.type_of_exchange_id),
+        type_of_payment: TypeOfPayment.find(contract.type_of_payment_id),
+        type_of_contract: TypeOfContract.find(contract.type_of_contract_id),
+        provider: Organization.find(contract.provider_id),
+        customer: Organization.find(contract.customer_id)
+      }
+    end
+
     def invoice_parser (invoice)
       {
         id: invoice.id,
@@ -48,7 +64,7 @@ module Customs
         write_down_summa: invoice.write_down_summa,
         invoice_type: InvoiceType.find(invoice.invoice_type_id),
         operation: Operation.find(invoice.operation_id),
-        contract: Contract.find(invoice.contract_id),
+        contract: contract_parser(Contract.find(invoice.contract_id)),
         agreement: Agreement.find(invoice.agreement_id),
         currency: Currency.find(invoice.currency_id),
         status_of_acceptance: StatusOfAcceptance.find(invoice.status_of_acceptance_id),

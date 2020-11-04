@@ -47,13 +47,13 @@ module Guides
     def post_method_helper(params)
       p params
       invoice_product = InvoiceProduct.find(params[:invoice_product_id])
-      comercial_p = params[:commercial_percent].to_f
-      comercial_v = (params[:commercial_percent].to_f / 100.0) * invoice_product.price
       wholesale_p = params[:wholesale_percent].to_f
-      wholesale_v = (params[:wholesale_percent].to_f / 100.0) * invoice_product.cost
-      nds_p = params[:nds_percent].to_f
-      nds_v = (nds_p / 100.0) * (invoice_product.price + ((comercial_p / 100.0) * invoice_product.price))
-      retail_v = nds_v + invoice_product.price + comercial_v
+      wholesale_v = (params[:wholesale_percent].to_f / 100.0) * invoice_product.price
+      comercial_p = params[:commercial_percent].to_f
+      comercial_v = (params[:commercial_percent].to_f / 100.0) * (invoice_product.price + wholesale_v)
+      nds_p = invoice_product.rate_vat.rate.to_f
+      nds_v = (nds_p / 100.0) * (invoice_product.price + wholesale_v + comercial_v)
+      retail_v = nds_v + invoice_product.price + comercial_v + wholesale_v
       {
         wholesale_percent: wholesale_p,
         wholesale_value: wholesale_v,
@@ -83,7 +83,7 @@ module Guides
     end
 
     def permit_params
-      params.require(@model.name.underscore.to_sym).permit(:wholesale_percent, :commercial_percent, :nds_percent, :invoice_product_id)
+      params.require(@model.name.underscore.to_sym).permit(:wholesale_percent, :commercial_percent, :invoice_product_id)
     end
   end
 end
