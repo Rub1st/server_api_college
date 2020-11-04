@@ -39,6 +39,8 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rack-cors'
   gem 'rubocop'
+  gem 'wicked_pdf'
+  gem 'wkhtmltopdf-binary'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

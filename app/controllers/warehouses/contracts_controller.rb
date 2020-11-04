@@ -1,4 +1,8 @@
 module Warehouses
+  class ApplicationController < ActionController::API
+    include ActionController::MimeResponds
+  end
+
   class ContractsController < ApplicationController
 
     def initialize
@@ -19,11 +23,23 @@ module Warehouses
     end
 
     def index
-      render json: @model.find_each.map{|el| get_method_helper(el)}, status: :ok
+      render json: @model.find_each.map{ |el| get_method_helper(el)}, status: :ok
     end
 
     def show
       render json: @model.where(id: params[:id]).map{|el| get_method_helper(el)}.first, status: :ok
+    end
+
+    def export_pdf
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render template: 'contracts/report.pdf.erd',
+          pdf: "#{@contract.series_and_number}" + Time.now.strftime('%v %H:%M:%S').to_s,
+          orientation: "Landscape", encoding: "UTF-8",
+          layout: 'pdf.html.erb'
+        end
+      end
     end
 
     private

@@ -12,9 +12,9 @@ class SingleTableQuery
     end
 
 	def update (model, data_params,id)
-  	d = model.find(id)
+  	  d = model.find(id)
       if d.update_attributes(data_params)
-          {json: d, status: :ok}
+          {json: d, status: :ok }
       else
           { json: { errors: d.errors }, status: :unprocessable_entity }
       end
@@ -26,12 +26,12 @@ class SingleTableQuery
     end
 
     def index (model)
-        d = model.find_each.map{|el| {id: el.id, name: el.name}}
+        d = model.find_each.map { |el| {id: el.id, name: el.name} }
         {json: d, status: :ok}
     end
 
     def show (model, id)
-        d = model.where(id: id).map{|el| {id: el.id, name: el.name}}
+        d = model.where(id: id).map { |el| {id: el.id, name: el.name} }
         {json: d, status: 201}
     end
 
